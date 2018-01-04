@@ -1,0 +1,308 @@
+@import "bourbon"
+@import "vars.sass"
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "RobotoRegular", sans-serif
+	overflow-x: hidden
+	background-color: #fff
+
+.hidden
+	display: none
+
+h1
+	color: #ffffff
+	font-size: 22px
+	font-family: MetropolisBold, sans-serif
+	text-transform: uppercase
+	font-weight: normal
+	margin-top: 30px
+	margin-bottom: 65px
+	transition: margin-bottom .6s ease
+
+.dropdown-content
+	position: absolute
+	margin-top: 9px
+	min-width: 125px
+	background-color: #fff
+	box-shadow: 0 1px 5px rgba(0,0,0,.34)
+	display: none
+	transition: all .3s ease
+	&:after
+    content: ""
+    width: 0
+    height: 0
+    position: absolute
+    left: 26px
+    top: -5px
+    border-width:  0 5px 5px 5px
+    border-style: solid
+    border-color: #fff transparent
+	li
+		float: none !important
+		margin: 0 !important
+		a
+			padding: 8px 15px !important
+			font-size: 15px !important
+			color: $dark-blue !important
+			&:hover
+				background-color: #e9eaea
+	&.open
+		display: block
+
+.wrapper
+	width: 100%
+
+.button
+	display: inline-block
+	color: #ffffff
+	font: 16px Roboto, sans-serif
+	line-height: 50px
+	text-transform: uppercase
+	border: 0
+	border-radius: 25px
+	background-color: $light-green
+	padding: 0 90px
+	margin-bottom: 16px
+
+header
+	background-image: url(../img/header-bg.jpg)
+	background-position: center
+
+.logo
+	width: 137px
+	height: 52px
+
+.topline
+	padding: 20px 0
+	background-color: $dark-blue-cover
+	&-wrap
+		display: -webkit-box
+		display: -webkit-flex
+		display: -ms-flexbox
+		display: flex
+		justify-content: space-between
+		align-items: center
+	ul
+		list-style-type: none
+		color: #f0f0f0
+		padding: 0
+		li
+			float: left
+			margin-left: 20px
+			line-height: 1
+			a
+				display: block
+				color: #f0f0f0
+				font: 15px Roboto, sans-serif
+				transition: color .3s ease
+				&:hover
+					color: $light-green
+					text-decoration: none
+				&:focus
+					outline: none
+					text-decoration: none
+			&.active
+				a
+					color: #9a9d9e
+
+.switch-lang-btn
+	position: relative
+	img
+		margin-right: 6px
+		transition: opacity .3s ease
+		box-shadow: 0 0 5px rgba(0,0,0,.36)
+	.lang-icon
+		border-radius: 2px
+		width: 23px
+		height: 14px
+		opacity: 0.86
+	.drop-down-icon
+		width: 9.38px
+		height: 3.75px
+		opacity: 0.26
+	a:hover
+		img
+			opacity: 1
+	
+.header-text
+	text-align: center
+
+.header-bottom-line
+	color: #ffffff
+	font: 16px Roboto, sans-serif
+	line-height: 22px
+	text-align: center
+	padding: 12px 0 18px
+	background-color: $dark-blue-cover
+	margin-top: 135px
+	transition: margin-top 1.0s ease
+	.tabs-controls, .tabs-content
+		position: relative
+		list-style-type: none
+		padding: 0
+		margin: 0
+	.tabs-controls
+		display: block
+		line-height: 1
+		&-item
+			color: #ffffff
+			font: 14px Roboto, sans-serif
+			line-height: 29px
+			text-decoration: none
+			padding: 0
+			margin: 0
+			float: left
+			display: block
+			padding: 0 24px
+			margin-right: 4px
+			margin-bottom: 4px
+			border-radius: 4px
+			background-color: rgba(255,255,255,.37)
+			cursor: pointer
+			&:hover
+				color: $dark-blue
+				background-color: #fff
+			&.active
+				color: $dark-blue
+				background-color: #fff
+		.review-form-tab
+			float: right
+			color: $light-green-lighten
+			margin-right: 0
+			background-color: $light-green-trans
+			&:hover
+				color: $dark-blue
+				background-color: $light-green-lighten;
+			&.active
+				color: $dark-blue
+				background-color: $light-green-lighten;
+				
+	.tabs-content
+		display: inline-block
+		width: 100%
+		.tabs-item
+			display: none
+			&.active
+				display: block
+	
+	.header-main-form
+		display: flex
+		label
+			position: relative
+			margin: 0 1px
+			flex-grow: 1
+			&.text
+				flex-basis: 374px
+			&.date		
+				flex-basis: 157px
+			&.passengers
+				flex-basis: 68px
+				min-width: 68px
+			a, span
+				display: block
+				position: absolute
+				top: 12px
+				left: 8px
+				line-height: 1
+				i
+					color: $light-green
+					font-size: 16px
+	input, textarea
+		border: none
+		border-radius: 2px
+		color: #000000
+		font: 16px RobotoLight, sans-serif
+		line-height: 40px
+		padding-left: 33px
+		padding-right: 14px
+		width: 100%
+	
+.simple-form
+	display: flex
+	max-width: 1010px
+	margin: 0 auto
+	justify-content: center
+	flex-flow: wrap
+	p
+		max-width: 874px
+		margin: 16px 0 22px
+	.left-block
+		flex-basis: 348px
+		margin-right: 46px
+		flex-grow: 1
+	.right-block
+		flex-basis: 615px
+		flex-grow: 1
+	input
+		margin-bottom: 8px
+	textarea
+		height: 142px
+		resize: none
+	&.review-form
+		textarea
+			height: 94px
+	&.order-form
+		height: 82px
+	.checkboxes
+		display: inline-block
+		text-align: left
+		list-style-type: none
+		margin: 15px auto 14px
+		position: relative
+		padding: 0
+		li
+			display: block
+			padding-bottom: 14px
+			padding-left: 56px
+			position: relative
+			p, a
+				line-height: 1
+				padding: 0
+				margin: 0
+				font: 15px Roboto, sans-serif
+	
+	.simple-form-checkbox-label
+		position: absolute
+		top: 0
+		left: 0
+		cursor: pointer
+		position: absolute
+		width: 28px
+		height: 14px
+		border-radius: 7px
+		background-color: #efefef
+		&:before
+			content: ''
+			position: absolute
+			top: -2px
+			width: 18px
+			height: 18px
+			border-radius: 9px
+			background-color: #afbcbc	
+	input[type="checkbox"]
+		display: none
+	input[type="checkbox"]:checked + label:before
+		content: ''
+		position: absolute
+		top: -2px
+		width: 18px
+		height: 18px
+		border-radius: 9px
+		background-color: $light-green
+    
+				
+
+
+
+
+	
+
+			
+			
+
+
+
