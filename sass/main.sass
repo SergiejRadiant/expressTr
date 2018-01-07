@@ -25,6 +25,468 @@ body textarea:required:valid
 	color: #666
 
 //Custom Styles Here
+section, main
+	text-align: center
+	&.grey
+		background-color: #e9e9e9
+	
+
+	
+h2
+	font: 25px RobotoLight, sans-serif
+	margin: 0 0 23px
+
+.text-block
+	h2
+		font-size: 27px
+
+h3
+	color: #969595
+	font: 20px RobotoBold, sans-serif
+	margin: 13px 0
+
+h4
+	font: 18px RobotoBold, sans-serif
+	margin: 60px 0 23px
+
+h5
+	color: #d8dbdb
+	font: 14px Roboto, sans-serif
+	margin: 0 0 14px 0
+
+p
+	margin: 0 0 23px 0
+
+ul
+	padding: 0
+	margin: 0 0 12px 0
+	list-style-type: none
+
+.breadcrumps
+	text-align: left
+	color: #b4b4b4
+	font: 15px RobotoLight
+	margin: 4px 0
+	a, span
+		padding-right: 4px
+	a:hover
+		color: #b4b4b4
+		text-decoration: none
+	a:visited
+		color: inherit
+		text-decoration: none
+	i
+		color: $light-green
+	& + h3
+		margin-top: 0
+
+
+.text-block	
+	li
+		position: relative
+		margin-bottom: 11px
+		list-style-type: none
+		padding: 0 0 0 40px
+		&:before
+			content: ''
+			position: absolute
+			top: 8px
+			left: 10px
+			width: 6px
+			height: 6px
+			background-color: #cbd8d6
+			border-radius: 3px
+
+a
+	color: darken($light-green, 7%)
+	&:hover
+		color: darken($light-green, 7%)
+	&:visited
+		color: darken($light-green, 7%)
+	&:focus
+		outline: 0
+	
+
+.text-block
+	width: 100%
+	position: relative
+	padding: 30px 48px
+	margin-bottom: 15px
+	text-align: left
+	border-radius: 4px
+	background-color: #ffffff
+	box-shadow: 0 0 18px (0,0,0,.03)
+	h4:first-of-type
+		margin-top: 0
+	.partners
+		.img-wrap
+			max-width: 130px!important
+
+.button
+	display: inline-block
+	color: #ffffff
+	font: 14px Roboto, sans-serif
+	line-height: 1
+	text-transform: uppercase
+	border: 0
+	border-radius: 25px
+	background-color: $light-green
+	padding: 19px 35px 17px
+	&:focus
+		color: #ffffff
+		text-decoration: none
+		outline: 0
+	&:hover
+		color: #ffffff
+		text-decoration: none
+	&:visited
+		color: #ffffff
+		text-decoration: none
+	&.large
+		padding: 19px 90px 17px
+	&.lite
+		color: $light-green
+		padding: 17px 35px 15px
+		background-color: transparent
+		border: 1px solid $light-green
+
+.btn-wrap
+	width: 100%
+	text-align: center
+
+.social
+	li 
+		position: relative
+		float: left
+		margin-right: 8px
+		&:last-of-type
+			margin: 0
+	a
+		&:hover
+			i
+				color: lighten($light-green, 20%)
+	i	
+		color: $light-green
+		font-size: 39px
+		transition: color .4s ease
+		&:before
+			margin: 0
+
+
+.check-auto
+	&-wrap
+		display: flex
+		justify-content: center
+		flex-flow: wrap
+		margin: 58px auto 0
+	&-item
+		position: relative
+		display: block
+		width: 100%
+		max-width: 447px
+		text-align: left
+		margin: 0 58px 83px
+		&-topline
+			background-color: #FFF
+			width: 100%
+			position: relative
+			padding: 13px 175px 10px 15px
+			border-left: 5px solid $light-green
+		h2
+			margin: 0 0 13px
+		ul
+			padding: 0
+			margin: 0
+			display: inline-block
+			list-style-type: none
+			li
+				font: 15px RobotoLight, sans-serif
+				line-height: 1
+				padding: 0
+				margin: 0 10px 0 0
+				float: left
+				i
+					font-size: 14px
+					color: $light-green
+					margin-right: 7px
+		&-price
+			display: inline-block
+			position: absolute
+			top: 0
+			right: 0
+			height: 100%
+			color: #a6a8aa
+			font: 21px ClearSans, sans-serif
+			line-height: 1
+			padding: 35px 21px 
+			background-color: #edecec
+			i
+				font-size: 16px
+				position: relative
+				bottom: 2px
+		.img-wrap
+			position: relative
+			width: 100%
+			height: 241px
+			overflow: hidden
+			a
+				display: block
+				cursor: pointer
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+				position: absolute
+				&:hover
+					img
+						opacity: 0.8
+			img
+				display: block
+				width: 100%
+				height: 100%
+				transition: opacity .6s ease
+		.btn-wrap
+			position: absolute
+			bottom: -25px
+			
+			
+
+
+.how-we-work, .advantages
+	display: flex
+	padding: 25px 0 0 0
+	justify-content: space-around
+	flex-flow: wrap
+	&-item
+		text-align: center
+		margin-bottom: 25px
+		p
+			display: inline-block
+			font-size: 15px
+			line-height: 21px
+			margin-top: 25px
+		img
+			display: inline-block
+			width: auto
+
+.how-we-work-item
+		max-width: 224px
+		p
+			padding-top: 6px
+			border-top: 1px solid rgba(0,0,0,.12)
+		img
+			height: 121px
+
+.advantages-item
+	max-width: 179px
+	img
+		height: 141px
+
+.destinations
+	margin-bottom: 14px 
+	display: flex
+	justify-content: space-between
+	&-item
+		max-width: 360px
+		display: flex
+		align-content: center
+		flex-flow: column
+		background-color: #fff
+		margin: 0 10px 20px
+		&-text
+			font-size: 15px
+			padding: 0 20px 22px
+			h2, p
+				text-align: left
+		.img-wrap
+			width: 100%
+			height: 188px
+			overflow: hidden
+			img
+				width: 100%
+				height: auto
+	& + .button
+		margin-bottom: 34px
+
+.counters-sec
+	position: relative
+	background: url(../img/counters-bg.jpg) center
+	background-size: cover
+
+.counters
+	display: flex
+	color: #fff
+	justify-content: space-around
+	margin: 145px auto 
+	&-item
+		max-width: 128px
+		span
+			display: block
+			font: 51px DroidSansBold, sans-serif
+			margin-bottom: 13px
+			line-height: 1
+		p
+			font: 16px Designosaur, sans-serif
+			margin: 0
+			line-height: 20px
+
+.reviews
+	display: flex
+	margin: 57px 0 0 0
+	justify-content: space-between
+	&-item
+		display: flex
+		flex-flow: column
+		align-items: center
+		position: relative
+		max-width: 360px
+		background-color: #fff
+		padding: 48px 20px 66px
+		margin: 0 10px 49px
+		box-shadow: 0 0 36px rgba(0,0,0,.06)
+		&-icon
+			display: inline-block
+			position: absolute
+			top: -32px
+			width: 63px
+			height: 63px
+			border-radius: 50%
+			background: url('../img/reviews/review-icon.svg') no-repeat center $light-green
+		p
+			font-family: RobotoLightItalic, sans-serif
+			margin-bottom: 16px
+		.bottomline
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 100%
+			padding-bottom: 24px
+		.author, .date
+			float: bottom
+		.author
+			font: 15px ClearSans, sans-serif
+			margin-bottom: 3px
+		.date
+			color: #8d979d
+			font: 16px RobotoLight, sans-serif
+
+.partners
+	display: flex
+	justify-content: space-around
+	flex-flow: wrap
+	.img-wrap
+		max-width: 150px
+		height: 144px
+		display: flex
+		margin: 0 50px 49px
+		flex-flow: column
+		justify-content: center
+		img
+			width: 100%
+			height: auto
+			opacity: .72
+
+footer
+	color: #f0f0f0
+	font: 14px RobotoLight, sans-serif
+	background-color: #292727
+	padding: 43px 0 0 0
+	.light
+		color: lighten($light-green, 3%)
+		font-family: Roboto, sans-serif
+	
+.footer
+	display: flex
+	justify-content: space-between
+	flex-flow: wrap
+	&-item
+		max-width: 240px
+		display: flex
+		flex-flow: column
+		align-items: flex-start
+	.tagline
+		font: 15px RobotoItalic, sans-serif
+		margin: 20px 0
+	ul
+		margin-bottom: 0
+	p
+		margin-bottom: 9px
+		font-style: normal
+	a
+		display: inline-block
+		margin-bottom: 9px
+		color: inherit
+		font: inherit
+		transition: color .4s ease
+		&:hover
+			color: lighten($light-green, 3%)
+			text-decoration: none
+	.contacts
+		display: table
+		&-row
+			display: table-row
+		&-cell
+			vertical-align: top		
+			display: table-cell
+			padding-right: 13px
+			padding-bottom: 10px
+			&:last-child
+				padding-right: 0
+	.social
+		margin-bottom: 10px
+	.button
+		display: inline-flex
+		color: $dark-blue
+		font: 12px Roboto, sans-serif
+		border-radius: 3px
+		padding: 9px 20px 7px
+		margin: 6px 0 29px
+		background-color: #e5e5e5
+		transition: all .2s ease
+		&:hover
+			color: #fff
+			background-color: $light-green
+	.pay-methods
+		.img-wrap
+			width: 41px
+			height: 27px
+			position: relative
+			overflow: hidden
+			margin: 0 9px 11px 0
+			float: left
+			&:last-of-type
+				margin: 0 0 11px 0
+			img
+				display: block
+				position: absolute
+				width: 100%
+				height: auto
+
+.footer-bottom-line
+	margin-bottom: 10px
+	p
+		font: 13px RobotoLight, sans-serif
+		margin: 0 0 3px 0
+		opacity: 0.892
+
+
+
+
+				
+
+
+
+
+
+
+
+
+
+
+
+			
+		
+
 
 
 //ALWAYS END

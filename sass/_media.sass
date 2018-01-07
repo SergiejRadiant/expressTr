@@ -3,17 +3,143 @@
 /*==========  Desktop First Method  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
+@media only screen and (max-width : 1199px)
+	.check-auto
+		&-item
+			max-width: 390px
+			margin: 0 38px 83px
+			&-topline
+				padding: 11px 175px 8px 15px
+			h2
+				font-size: 24px
+			
+			&-price
+				padding: 31px 21px 
+			.img-wrap
+				height: 221px
+			
+	.how-we-work-item
+		max-width: 184px
+		img
+			height: 111px
+
+	.advantages-item
+		max-width: 149px
+		img
+			height: 121px
+	
+	.partners .img-wrap
+		max-width: 130px
+
+	.text-block .partners .img-wrap
+		margin: 0 40px 49px
+
+		
+
+
+
+
+
+
 
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
-	/**/
+@media only screen and (max-width : 991px)
+	.how-we-work-item
+		max-width: 224px
+		img
+			height: 111px
+
+	.advantages-item
+		max-width: 179px
+		img
+			height: 121px
+
+	.destinations
+		flex-flow: column
+		align-items: center
+
+	.counters
+		margin: 115px auto
+		span
+			font-size: 45px
+		p
+			font-size: 16px
+
+
+	.reviews
+		flex-flow: column
+		align-items: stretch
+		&-item
+			max-width: 1047px
+
+	.partners	.img-wrap
+		margin: 0 92px 49px
+
+	.text-block .partners .img-wrap
+		margin: 0 90px 49px
+
+	.footer
+		flex-flow: column
+		align-items: stretch
+		h5
+			margin-bottom: 24px
+		&-item
+			max-width: 100%
+			margin-bottom: 36px
+			align-items: center
+			&:nth-child(2), &:nth-child(4)
+				ul
+					width: 100%
+					display: flex
+			&:nth-child(2)
+				ul
+					justify-content: center
+					li
+						margin: 0 20px
+			&:last-child
+				margin-bottom: 0
+			.social
+				justify-content: center
+				margin-bottom: 28px
+				li
+					margin: 0 7px
+			.contacts
+				&-row
+					display: flex
+					justify-content: center
+					&:last-child
+						margin-top: 12px
+					a
+						margin-right: 10px
+						&:last-child
+							margin-right: 0
+			.button
+				margin-bottom: 56px
+	
+	.footer-bottom-line
+		text-align: center
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
+@media only screen and (max-width : 767px)
+	.counters
+		margin: 115px auto 59px
+		flex-flow: column
+		align-items: center
+		&-item
+			margin: 0 0 56px 0
+		span
+			font-size: 48px
+		p
+			font-size: 16px
+
+	.footer-item:nth-child(2)
+		ul
+			flex-flow: column
+			justify-content: flex-start
+			text-align: center
+
 	
 	/*Disable Animation on Mobile Devices*/
 	.animated
@@ -39,7 +165,34 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	.check-auto
+		&-item
+			margin-right: 0
+			margin-left: 0
+			max-width: 340px
+			&-topline
+				padding: 11px 145px 8px 15px
+			h2
+				font-size: 18px
+			li
+				font: 13px RobotoLight, sans-serif!important
+				line-height: 1
+				padding: 0
+				margin: 0 5px 0 0!important
+				float: left
+				i
+					font-size: 13px!important
+					color: $light-green
+					margin-right: 4px!important
+			
+			&-price
+				font: 18px ClearSans, sans-serif
+				padding: 26px 14px 0 16px
+				i
+					font-size: 12px 
+					bottom: 1px
+			.img-wrap
+				height: 191px
 
 
 /* Custom, iPhone Retina */
