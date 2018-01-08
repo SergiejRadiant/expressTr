@@ -33,7 +33,7 @@ section, main
 
 	
 h2
-	font: 25px RobotoLight, sans-serif
+	font: 27px RobotoLight, sans-serif
 	margin: 0 0 23px
 
 .text-block
@@ -48,6 +48,8 @@ h3
 h4
 	font: 18px RobotoBold, sans-serif
 	margin: 60px 0 23px
+	&:first-of-type
+		margin-top: 0
 
 h5
 	color: #d8dbdb
@@ -71,10 +73,15 @@ ul
 		padding-right: 4px
 	a:hover
 		color: #b4b4b4
-		text-decoration: none
 	a:visited
-		color: inherit
+		color: #b4b4b4
 		text-decoration: none
+	a:focus
+		color: #b4b4b4
+		text-decoration: none
+	a:first-of-type:hover
+		text-decoration: none
+
 	i
 		color: $light-green
 	& + h3
@@ -115,12 +122,8 @@ a
 	text-align: left
 	border-radius: 4px
 	background-color: #ffffff
-	box-shadow: 0 0 18px (0,0,0,.03)
-	h4:first-of-type
-		margin-top: 0
-	.partners
-		.img-wrap
-			max-width: 130px!important
+	box-shadow: 0 0 18px (0,0,0,.04)
+
 
 .button
 	display: inline-block
@@ -128,6 +131,7 @@ a
 	font: 14px Roboto, sans-serif
 	line-height: 1
 	text-transform: uppercase
+	text-align: center!important
 	border: 0
 	border-radius: 25px
 	background-color: $light-green
@@ -143,32 +147,34 @@ a
 		color: #ffffff
 		text-decoration: none
 	&.large
-		padding: 19px 90px 17px
+		width: 100%
+		max-width: 326px
 	&.lite
 		color: $light-green
 		padding: 17px 35px 15px
 		background-color: transparent
 		border: 1px solid $light-green
+	&.disabled
+		background-color: #b1e0d9
+		&:hover
+			background-color: #b1e0d9
 
 .btn-wrap
 	width: 100%
 	text-align: center
 
 .social
-	li 
-		position: relative
-		float: left
-		margin-right: 8px
+	a
+		margin-right: 4px
 		&:last-of-type
 			margin: 0
-	a
 		&:hover
 			i
 				color: lighten($light-green, 20%)
 	i	
 		color: $light-green
 		font-size: 39px
-		transition: color .4s ease
+		transition: color .3s ease
 		&:before
 			margin: 0
 
@@ -186,6 +192,7 @@ a
 		max-width: 447px
 		text-align: left
 		margin: 0 58px 83px
+		box-shadow: inset hoff voff blur color	0 0 36px rgba(0,0,0,.06)
 		&-topline
 			background-color: #FFF
 			width: 100%
@@ -258,6 +265,7 @@ a
 	justify-content: space-around
 	flex-flow: wrap
 	&-item
+		width: 100%
 		text-align: center
 		margin-bottom: 25px
 		p
@@ -270,46 +278,136 @@ a
 			width: auto
 
 .how-we-work-item
-		max-width: 224px
-		p
-			padding-top: 6px
-			border-top: 1px solid rgba(0,0,0,.12)
-		img
-			height: 121px
+	max-width: 224px
+	p
+		padding-top: 6px
+		border-top: 1px solid rgba(0,0,0,.12)
+	img
+		height: 121px
 
 .advantages-item
 	max-width: 179px
 	img
 		height: 141px
 
-.destinations
-	margin-bottom: 14px 
+
+
+
+.dest-categories
+	padding: 0 61.5px
+	margin-top: 20px
+	margin-bottom: 28px
+	.button
+		text-transform: none
+		font-size: 16px
+		border-radius: 21px
+		padding: 14px 22px 12px
+		margin: 4px
+
+
+.destinations-item
+	display: flex
+	background-color: #fff
+	margin-bottom: 25px
+	box-shadow: 0 0 36px rgba(0,0,0,.06)
+	&:last-child
+		margin-bottom: 0
+	.destinations-img
+		position: relative
+		width: 100%
+		max-width: 432px
+		overflow: hidden
+	.destinations-text
+		position: relative
+		width: 100%
+		text-align: left
+		padding: 34px 56px
+	.price
+		display: inline-block
+		position: absolute
+		top: 36px
+		right: 47px
+		color: #bebdbd
+		font: 26px ClearSans, sans-serif
+		span
+			font-size: 22px
+		i
+			font-size: 17px
+			position: relative
+			top: -2px
+			&:before
+				margin: 0
+	h2
+		padding-right: 145px
+	p
+		margin-bottom: 25px
+	.img-wrap
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		width: 738px
+		height: 738px
+		border-radius: 50%
+		margin: auto 0
+		overflow: hidden
+		img
+			height: 100%
+			width: auto
+	.button
+		width: 100%
+		max-width: 168px
+	&:nth-child(even)
+		.destinations-img
+			order: 1
+			.img-wrap
+				left: 0
+		
+
+.destinations-prevs
 	display: flex
 	justify-content: space-between
-	&-item
+	.destinations-item
+		width: 100%
 		max-width: 360px
-		display: flex
-		align-content: center
 		flex-flow: column
-		background-color: #fff
-		margin: 0 10px 20px
-		&-text
-			font-size: 15px
-			padding: 0 20px 22px
-			h2, p
-				text-align: left
+		margin-right: 20px
+		margin-bottom: 0
+		&:nth-child(even) 
+			.destinations-img
+				order: 0
+		&:last-child
+			margin-right: 0
+		.destinations-img
+			position: relative
+			max-width: 100%
 		.img-wrap
+			position: relative
 			width: 100%
-			height: 188px
-			overflow: hidden
+			height: 146px
+			border-radius: 0
 			img
 				width: 100%
 				height: auto
+		.destinations-text
+			padding: 20px 20px 32px
+		h2
+			font-size: 25px
+			margin-bottom: 16px
+		p
+			margin-bottom: 24px
+		.button
+			display: block
+			margin: 0 auto
 	& + .button
-		margin-bottom: 34px
+		margin: 36px 0 36px
+
+
+
 
 .counters-sec
 	position: relative
+	padding: 145px 0
 	background: url(../img/counters-bg.jpg) center
 	background-size: cover
 
@@ -317,8 +415,8 @@ a
 	display: flex
 	color: #fff
 	justify-content: space-around
-	margin: 145px auto 
 	&-item
+		width: 100%
 		max-width: 128px
 		span
 			display: block
@@ -330,26 +428,47 @@ a
 			margin: 0
 			line-height: 20px
 
+
+
+
+.reviews-sec
+	padding-top: 57px
+
 .reviews
 	display: flex
-	margin: 57px 0 0 0
-	justify-content: space-between
+	max-width: 1047px
+	margin: 0 auto
+	flex-flow: column
+	&.prev
+		flex-flow: row
+		justify-content: space-between
+		align-content: center
+		.reviews-item
+			width: 100%
+			max-width: 360px
+			margin-bottom: 0
+			margin-right: 20px
+			&:last-child
+				margin-right: 0
 	&-item
-		display: flex
-		flex-flow: column
-		align-items: center
 		position: relative
-		max-width: 360px
 		background-color: #fff
 		padding: 48px 20px 66px
-		margin: 0 10px 49px
+		margin-bottom: 49px
 		box-shadow: 0 0 36px rgba(0,0,0,.06)
-		&-icon
-			display: inline-block
+		&:last-child
+			margin-bottom: 0
+		.img-wrap
 			position: absolute
 			top: -32px
+			left: 0
+			width: 100%
+			text-align: center
+		&-icon
+			display: inline-block
 			width: 63px
 			height: 63px
+			margin: 0 auto
 			border-radius: 50%
 			background: url('../img/reviews/review-icon.svg') no-repeat center $light-green
 		p
@@ -370,21 +489,115 @@ a
 			color: #8d979d
 			font: 16px RobotoLight, sans-serif
 
+
+
+.pagination
+	margin-top: 50px
+	margin-bottom: 50px
+	.page-item
+		display: inline-block
+		width: 47px
+		height: 47px
+		border-radius: 50%
+		padding: 16px 0 0 0
+		margin-right: 2px
+		margin-Left: 2px
+		background-color: #e5e5e5
+		text-align: center
+		transition: background-color .2s ease
+		&:first-child,
+		&:last-child
+			background-color: $light-green
+			.page-link
+				color: #fff
+			&:hover
+				background-color: lighten($light-green, 7%)
+				.page-link
+					color: #fff
+		&.active
+			background-color: lighten($light-green, 7%)
+			.page-link
+				color: #fff
+			&:hover
+				background-color: lighten($light-green, 7%)
+				.page-link
+					color: #fff
+		&.disabled
+			background-color: #b1e0d9
+			.page-link
+				color: #fff
+			&:hover
+				background-color: #b1e0d9
+				.page-link
+					color: #fff
+		&.dots
+			position: relative
+			background-color: transparent
+			span
+				display: inline-block
+				position: relative
+				top: 17px
+				width: 6px
+				height: 6px
+				border-radius: 50%
+				margin-right: 2px
+				background-color: $light-green
+				&:last-child
+					margin-right: 0
+			&:hover
+				background-color: transparent
+
+		&:hover
+			background-color: lighten($light-green, 45%)
+
+	.page-link
+		display: block
+		width: 100%
+		height: 100%	
+		color: #11b299
+		font: 16px ClearSans, sans-serif	
+		line-height: 1
+		&:focus
+			color: darken($light-green, 3%)
+			text-decoration: none
+		&:visited
+			color: darken($light-green, 3%)
+			text-decoration: none
+		&:hover
+			color: darken($light-green, 3%)
+			text-decoration: none
+
+	i
+		font-size: 10px
+		position: relative
+		top: -2px
+	
+
+
+.partners-sec
+	padding-top: 49px
+	padding-bottom: 49px
+
 .partners
 	display: flex
 	justify-content: space-around
 	flex-flow: wrap
 	.img-wrap
-		max-width: 150px
-		height: 144px
-		display: flex
-		margin: 0 50px 49px
+		width: 100%
+		max-width: 130px
+		margin: 14px 50px
+		line-height: 150px
 		flex-flow: column
 		justify-content: center
 		img
 			width: 100%
 			height: auto
 			opacity: .72
+
+.text-block
+	.partners
+		margin-bottom: 49px
+
 
 footer
 	color: #f0f0f0
@@ -400,10 +613,8 @@ footer
 	justify-content: space-between
 	flex-flow: wrap
 	&-item
+		width: 100%
 		max-width: 240px
-		display: flex
-		flex-flow: column
-		align-items: flex-start
 	.tagline
 		font: 15px RobotoItalic, sans-serif
 		margin: 20px 0
@@ -435,7 +646,6 @@ footer
 	.social
 		margin-bottom: 10px
 	.button
-		display: inline-flex
 		color: $dark-blue
 		font: 12px Roboto, sans-serif
 		border-radius: 3px
@@ -447,20 +657,15 @@ footer
 			color: #fff
 			background-color: $light-green
 	.pay-methods
-		.img-wrap
+		display: inline-block
+		img
 			width: 41px
 			height: 27px
-			position: relative
-			overflow: hidden
-			margin: 0 9px 11px 0
+			margin: 0 5px 8px 0
 			float: left
 			&:last-of-type
 				margin: 0 0 11px 0
-			img
-				display: block
-				position: absolute
-				width: 100%
-				height: auto
+			
 
 .footer-bottom-line
 	margin-bottom: 10px
