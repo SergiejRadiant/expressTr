@@ -56,8 +56,15 @@ h5
 	font: 14px Roboto, sans-serif
 	margin: 0 0 14px 0
 
+h6
+	font: 16px RobotoMedium, sans-serif
+	margin: 10px 0
+
 p
 	margin: 0 0 23px 0
+	span
+		color: darken($light-green, 4%)
+		font: 17px RobotoMedium, sans-serif
 
 ul
 	padding: 0
@@ -117,7 +124,7 @@ a
 .text-block
 	width: 100%
 	position: relative
-	padding: 30px 48px
+	padding: 30px 66px
 	margin-bottom: 15px
 	text-align: left
 	border-radius: 4px
@@ -164,8 +171,11 @@ a
 	text-align: center
 
 .social
+	display: inline-block
 	a
-		margin-right: 4px
+		float: left
+		margin-right: 4px!important
+		margin-bottom: 4px!important
 		&:last-of-type
 			margin: 0
 		&:hover
@@ -176,6 +186,7 @@ a
 		font-size: 39px
 		transition: color .3s ease
 		&:before
+			display: block
 			margin: 0
 
 
@@ -256,8 +267,6 @@ a
 			position: absolute
 			bottom: -25px
 			
-			
-
 
 .how-we-work, .advantages
 	display: flex
@@ -289,8 +298,6 @@ a
 	max-width: 179px
 	img
 		height: 141px
-
-
 
 
 .dest-categories
@@ -394,6 +401,7 @@ a
 		h2
 			font-size: 25px
 			margin-bottom: 16px
+			padding-right: 0
 		p
 			margin-bottom: 24px
 		.button
@@ -401,8 +409,6 @@ a
 			margin: 0 auto
 	& + .button
 		margin: 36px 0 36px
-
-
 
 
 .counters-sec
@@ -427,8 +433,6 @@ a
 			font: 16px Designosaur, sans-serif
 			margin: 0
 			line-height: 20px
-
-
 
 
 .reviews-sec
@@ -470,7 +474,7 @@ a
 			height: 63px
 			margin: 0 auto
 			border-radius: 50%
-			background: url('../img/reviews/review-icon.svg') no-repeat center $light-green
+			background: url('../img/technical/review-icon.svg') no-repeat center $light-green
 		p
 			font-family: RobotoLightItalic, sans-serif
 			margin-bottom: 16px
@@ -490,7 +494,6 @@ a
 			font: 16px RobotoLight, sans-serif
 
 
-
 .pagination
 	margin-top: 50px
 	margin-bottom: 50px
@@ -507,19 +510,19 @@ a
 		transition: background-color .2s ease
 		&:first-child,
 		&:last-child
-			background-color: $light-green
+			background-color: lighten($light-green, 3%)
 			.page-link
 				color: #fff
 			&:hover
-				background-color: lighten($light-green, 7%)
+				background-color: lighten($light-green, 8%)
 				.page-link
 					color: #fff
 		&.active
-			background-color: lighten($light-green, 7%)
+			background-color: lighten($light-green, 8%)
 			.page-link
 				color: #fff
 			&:hover
-				background-color: lighten($light-green, 7%)
+				background-color: lighten($light-green, 8%)
 				.page-link
 					color: #fff
 		&.disabled
@@ -573,7 +576,6 @@ a
 		top: -2px
 	
 
-
 .partners-sec
 	padding-top: 49px
 	padding-bottom: 49px
@@ -599,14 +601,128 @@ a
 		margin-bottom: 49px
 
 
+.contacts-wrap
+	display: flex
+	padding: 22px 0 60px
+	justify-content: space-between
+	>.contacts
+		width: 100%
+		max-width: 328px
+		&:first-child
+			max-width: 244px
+		&:last-child
+			max-width: 283px
+		&-cell
+			padding-bottom: 14px
+			&.light
+				color: darken($light-green, 4%)
+				padding-right: 26px
+	.social
+		margin-bottom: 6px
+
+.contacts
+	display: table
+	&-row
+		display: table-row
+	&-cell
+		vertical-align: top		
+		display: table-cell
+		padding-right: 13px
+		padding-bottom: 10px
+		&:last-child
+			padding-right: 0
+		&.light
+			color: lighten($light-green, 3%)
+			font-family: Roboto, sans-serif
+	p
+		margin-bottom: 8px
+		font-style: normal
+	a
+		display: inline-block
+		margin-bottom: 4px
+		color: inherit
+		font: inherit
+		transition: color .4s ease
+		&:hover
+			color: lighten($light-green, 3%)
+			text-decoration: none
+	a
+		margin-right: 10px
+		&:last-child
+			margin-right: 0
+	.button
+		color: $dark-blue
+		font: 12px Roboto, sans-serif
+		border-radius: 3px
+		padding: 9px 20px 7px
+		margin: 6px 0 29px
+		background-color: #e5e5e5
+		transition: all .2s ease
+		&:hover
+			color: #fff
+			background-color: $light-green
+
+.contacts-form
+	.contacts-lables-wrap	
+		display: flex
+		justify-content: space-between
+		label
+			width: 100%
+			max-width: 248px
+			margin-right: 10px
+			&.checkbox
+				display: none
+				width: 100%
+				max-width: 283px
+				font-size: 15px
+				line-height: 1.2
+				margin: 13px auto 12px
+				background-position: 0 1px
+		input[type="checkbox"]:checked + label
+			background-position: 0 1px
+		input
+			width: 100%
+			border-radius: 23px
+			line-height: 1
+			font-size: 17px
+			padding: 12px 22px 12px
+			border: 1px solid $light-green
+			&:focus
+				outline: 0
+			@include placeholder
+				color: $light-green
+		.button
+			padding: 17px 35px 15px
+			width: 100%
+			max-width: 248px
+			border-radius: 23px
+	input[type="checkbox"]
+		display: none
+	input[type="checkbox"] + label
+		display: inline-block
+		padding-left: 25px
+		line-height: 1.6
+		background: url('../img/technical/checkbox.svg') left center no-repeat
+		cursor: pointer
+		margin: 16px 0
+		a
+			color: darken($light-green, 2%)
+			&:hover
+				color: darken($light-green, 2%)
+			&:visited
+				color: darken($light-green, 2%)
+				text-decoration: none
+			&:focus
+				color: $light-green
+	input[type="checkbox"]:checked + label
+		background: url('../img/technical/checkbox-checked.svg') left center no-repeat
+
+
 footer
 	color: #f0f0f0
 	font: 14px RobotoLight, sans-serif
 	background-color: #292727
 	padding: 43px 0 0 0
-	.light
-		color: lighten($light-green, 3%)
-		font-family: Roboto, sans-serif
 	
 .footer
 	display: flex
@@ -615,34 +731,24 @@ footer
 	&-item
 		width: 100%
 		max-width: 240px
+		&:first-child
+			a
+				margin-bottom: 0
 	.tagline
 		font: 15px RobotoItalic, sans-serif
 		margin: 20px 0
 	ul
 		margin-bottom: 0
-	p
-		margin-bottom: 9px
-		font-style: normal
-	a
-		display: inline-block
-		margin-bottom: 9px
-		color: inherit
-		font: inherit
-		transition: color .4s ease
-		&:hover
-			color: lighten($light-green, 3%)
-			text-decoration: none
-	.contacts
-		display: table
-		&-row
-			display: table-row
-		&-cell
-			vertical-align: top		
-			display: table-cell
-			padding-right: 13px
-			padding-bottom: 10px
-			&:last-child
-				padding-right: 0
+		a
+			display: inline-block
+			margin-bottom: 9px
+			color: inherit
+			font: inherit
+			transition: color .4s ease
+			&:hover
+				color: lighten($light-green, 3%)
+				text-decoration: none
+	
 	.social
 		margin-bottom: 10px
 	.button
@@ -665,7 +771,6 @@ footer
 			float: left
 			&:last-of-type
 				margin: 0 0 11px 0
-			
 
 .footer-bottom-line
 	margin-bottom: 10px
@@ -673,6 +778,54 @@ footer
 		font: 13px RobotoLight, sans-serif
 		margin: 0 0 3px 0
 		opacity: 0.892
+
+
+.faqs-sec
+	padding-top: 4px
+	padding-bottom: 43px
+
+.accordeon-list
+	margin: 0 auto
+	width: 100%
+	max-width: 941px
+	text-align: left
+	box-shadow: 0 0 18px (0,0,0,.04)
+	.accordeon-item
+		background-color: #fff
+		border-bottom: 1px solid #eaeaea
+		overflow: hidden
+		&:first-child
+			border-top-right-radius: 4px
+			border-top-left-radius: 4px
+		&:last-child
+			border-bottom-right-radius: 4px
+			border-bottom-left-radius: 4px
+			border-bottom: 0
+		&.active
+			.accordeon-trigger
+				color: #fff
+				background-image: url('../img/technical/arrow-up.svg')
+				background-size: 41.68px 9.50px
+				background-color: lighten($light-green, 3%)
+			.accordeon-inner
+				display: block
+	
+	.accordeon-trigger
+		font: 16px RobotoMedium, sans-serif
+		padding: 17px 56.68px 17px 30px
+		cursor: pointer
+		background: url('../img/technical/arrow-down.svg') no-repeat right center
+		background-size: 41.68px 7.53px
+	.accordeon-inner
+		padding: 20px 30px
+		display: none
+		p
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+		
+
+
 
 
 
