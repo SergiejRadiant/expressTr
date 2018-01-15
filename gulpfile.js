@@ -29,12 +29,17 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function() {
-	return gulp.src([
-		'./app/libs/jquery/jquery-1.11.2.min.js',
-		])
-		.pipe(concat('libs.js'))
-		// .pipe(uglify()) //Minify libs.js
-		.pipe(gulp.dest('./app/js/'));
+	return (gulp
+      .src([
+        "./app/libs/jquery/jquery-3.2.1.min.js",
+        "./app/libs/cycle2/jquery.cycle2.min.js",
+        "./app/libs/cycle2/jquery.cycle2.carousel.min.js",
+        "./app/libs/magnific/jquery.magnific-popup.min.js",
+        "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+      ])
+      .pipe(concat("libs.js"))
+      // .pipe(uglify()) //Minify libs.js
+      .pipe(gulp.dest("./app/js/")) );
 });
 
 gulp.task('watch', function () {

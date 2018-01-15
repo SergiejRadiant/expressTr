@@ -12,11 +12,43 @@
 				padding: 11px 175px 8px 15px
 			h2
 				font-size: 24px
-			
-			&-price
-				padding: 31px 21px 
 			.img-wrap
-				height: 221px
+				height: 216px
+
+	.main-form
+		&-cell.label,
+		&-cell.label-inner
+			font-size: 15px
+		&-cell.contacts
+			width: 281px
+		.check-auto-item
+			margin-left: 45px
+			margin-right: 27px
+			max-width: 316px
+			&-topline
+				padding: 11px 145px 8px 15px
+			h2
+				font-size: 17px
+				margin: 0 0 7px
+			li
+				font: 13px RobotoLight, sans-serif!important
+				line-height: 1
+				padding: 0
+				margin: 0 5px 0 0!important
+				float: left
+				i
+					font-size: 13px!important
+					color: $light-green
+					margin-right: 4px!important
+			&-price
+				padding: 0 14px
+				span
+					font-size: 18px
+			.img-wrap
+				height: 164px
+				input[type="radio"]:checked + label:after
+					transform: scale(9)
+					top: 29px
 
 	.how-we-work-item
 		max-width: 184px
@@ -78,6 +110,23 @@
 				max-width: 318px
 			.checkbox
 				display: block!important
+
+	.destinations-inner-slider
+		height: 377px
+	
+	.slider-pager
+		bottom: -33px
+		.img-wrap
+			display: inline-block
+			width: 97px
+			height: 71px
+	
+	.destinations-inner-content
+		.text-block
+			padding-top: 89px
+			h4:first-of-type
+				margin-top: 52px
+
 				
 
 /* Medium Devices, Desktops */
@@ -121,9 +170,9 @@
 		.price
 			display: none
 		h2
-			font-size: 25px
+			font-size: 23px
 			padding-right: 0
-			margin-bottom: 16px
+			margin-bottom: 15px
 		p
 			margin-bottom: 24px
 		.button
@@ -132,6 +181,9 @@
 
 	.counters-sec
 		padding: 115px 0
+
+	.counters-bg
+		top: -223%
 
 	.counters
 		span
@@ -157,7 +209,7 @@
 	.text-block .partners
 		margin-bottom: 36px
 
-		.footer
+	.footer
 		flex-flow: column
 		align-items: stretch
 		h5
@@ -196,14 +248,57 @@
 				max-width: 180px
 				margin: 0 auto 54px
 
+	.main-form
+		&-cell.label
+			display: none
+		&-cell.contacts
+			width: 294px
+		.label-inner
+			display: none
+		&-cell.common
+			.main-form-cell
+				padding-right: 10px
+				&:last-child
+					padding-right: 0
+
+	.destinations-inner-slider
+		height: 300px
+
+	.slider-next, .slider-prev
+		width: 32px
+		height: 56px
+
+	.slider-enlarge
+		width: 56px
+		height: 56px
+
+	.slider-pager
+		bottom: -21px
+		.img-wrap
+			display: inline-block
+			width: 42px
+			height: 42px
+			border-radius: 50%	
+	
+	.destinations-inner-content
+		.text-block
+			padding-top: 78px
+			h2
+				font-size: 28px
+
 	.footer-bottom-line
 		text-align: center  
 
 
+
 /* Small Devices, Tablets */
-@media only screen and (max-width : 767px)
+@media only screen and (max-width : 768px)
 	.counters-sec
 		padding: 67px 0
+	.counters-bg
+		top: 0
+		height: 100%
+		transform: translate(0, 0)!important
 	.counters
 		flex-flow: column
 		align-items: center
@@ -223,11 +318,50 @@
 			line-height: 105px
 			margin: 0 74px 0
 
+	.main-form
+		.check-auto-item
+			margin-right: auto
+			margin-left: auto
+
 	.footer-item:nth-child(2)
 		ul
 			flex-flow: column
 			justify-content: flex-start
 			text-align: center
+
+	.destinations-inner-slider
+		height: 249px
+
+	.slider-pager
+		bottom: -21px
+		.img-wrap
+			display: inline-block
+			width: 42px
+			height: 42px
+			border-radius: 50%	
+
+	.destinations-inner-content
+		.text-block
+			padding-top: 63px
+
+
+@media only screen and (max-width : 619px)
+	.main-form
+		&-row
+			display: block
+		&-cell
+			display: block
+			width: 100%!important
+			padding-right: 0!important
+			input
+				max-width: 100%!important
+				&.promo
+					max-width: 268px!important
+
+
+
+
+
 
 	
 	/*Disable Animation on Mobile Devices*/
@@ -258,11 +392,12 @@
 		&-item
 			margin-right: 0
 			margin-left: 0
-			max-width: 340px
+			max-width: 316px
 			&-topline
 				padding: 11px 145px 8px 15px
 			h2
-				font-size: 18px
+				font-size: 17px
+				margin: 0 0 7px
 			li
 				font: 13px RobotoLight, sans-serif!important
 				line-height: 1
@@ -273,15 +408,29 @@
 					font-size: 13px!important
 					color: $light-green
 					margin-right: 4px!important
-			
 			&-price
-				font: 18px ClearSans, sans-serif
-				padding: 26px 14px 0 16px
-				i
-					font-size: 12px 
-					bottom: 1px
+				padding: 0 14px
+				span
+					font-size: 18px
 			.img-wrap
-				height: 191px
+				height: 164px
+
+	.main-form
+		.topline
+			label
+				margin-right: 7px
+				width: 48%
+				max-width: 48%
+				font-size: 14px
+				padding: 8px 5px 9px
+		.check-auto-item
+			.img-wrap
+				label:after
+					left: 0
+					right: 0
+					top: auto!important
+					bottom: -5px
+					margin: 0 auto
 
 	.text-block
 		padding: 30px 24px
@@ -304,8 +453,49 @@
 			font-size: 9px
 			top: -1px
 	
+	.destinations-inner-slider
+		height: 201px
+
+	.destinations-inner-content
+		.text-block
+			padding-top: 38px
+			h2
+				font-size: 26px
+
+	.slider-pager
+		display: none
 
 
+@media only screen and (max-width : 375px)
+	.contacts-form
+		.contacts-lables-wrap
+			label.checkbox
+				font-size: 14px
+	.popup-form
+		p
+			font-size: 13px
+		input[type=checkbox] + label
+			font-size: 13px
+
+@media only screen and (max-width : 351px)
+	.main-form
+		.topline
+			label
+				margin-right: 7px
+				width: 47%
+				max-width: 47%
+		.check-auto-item
+			&-topline
+				padding: 11px 145px 5px 15px
+			h2
+				font-size: 12px
+			&-price
+				span
+					font-size: 16px
+			.img-wrap
+				height: 134px
+				input[type=radio]:checked + label:after
+					transform: scale(8)
 
 
 /* Custom, iPhone Retina */

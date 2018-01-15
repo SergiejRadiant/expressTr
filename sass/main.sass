@@ -29,36 +29,36 @@ section, main
 	text-align: center
 	&.grey
 		background-color: #e9e9e9
-	
 
 	
 h2
-	font: 27px RobotoLight, sans-serif
+	font: 30px RobotoLight, sans-serif
 	margin: 0 0 23px
 
-.text-block
-	h2
-		font-size: 27px
 
 h3
 	color: #969595
-	font: 20px RobotoBold, sans-serif
-	margin: 13px 0
+	font: 19px RobotoMedium, sans-serif
+	margin: 12px 0 13px
+
 
 h4
-	font: 18px RobotoBold, sans-serif
-	margin: 60px 0 23px
+	font: 18px RobotoMedium, sans-serif
+	margin: 52px 0 23px
 	&:first-of-type
 		margin-top: 0
+
 
 h5
 	color: #d8dbdb
 	font: 14px Roboto, sans-serif
 	margin: 0 0 14px 0
 
+
 h6
 	font: 16px RobotoMedium, sans-serif
 	margin: 10px 0
+
 
 p
 	margin: 0 0 23px 0
@@ -66,10 +66,12 @@ p
 		color: darken($light-green, 4%)
 		font: 17px RobotoMedium, sans-serif
 
+
 ul
 	padding: 0
 	margin: 0 0 12px 0
 	list-style-type: none
+
 
 .breadcrumps
 	text-align: left
@@ -88,7 +90,6 @@ ul
 		text-decoration: none
 	a:first-of-type:hover
 		text-decoration: none
-
 	i
 		color: $light-green
 	& + h3
@@ -111,12 +112,13 @@ ul
 			background-color: #cbd8d6
 			border-radius: 3px
 
+
 a
-	color: darken($light-green, 7%)
+	color: darken($light-green, 5%)
 	&:hover
-		color: darken($light-green, 7%)
+		color: darken($light-green, 5%)
 	&:visited
-		color: darken($light-green, 7%)
+		color: darken($light-green, 5%)
 	&:focus
 		outline: 0
 	
@@ -130,9 +132,12 @@ a
 	border-radius: 4px
 	background-color: #ffffff
 	box-shadow: 0 0 18px (0,0,0,.04)
+	.btn-wrap
+		padding: 4px 0
 
 
 .button
+	position: relative
 	display: inline-block
 	color: #ffffff
 	font: 14px Roboto, sans-serif
@@ -141,15 +146,33 @@ a
 	text-align: center!important
 	border: 0
 	border-radius: 25px
+	overflow: hidden
 	background-color: $light-green
-	padding: 19px 35px 17px
+	padding: 18px 35px
+	transition: all .7s 
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: -200%
+		z-index: -1
+		background-color: lighten($light-green, 8%)
+		height: 400px
+		width: 500px
+		border-radius: 50%
+		transition: all .7s
+	&:hover
+		color: #ffffff
+		text-decoration: none
+		transform: scale(1.08)
+		box-shadow: 0 0 36px rgba(0,0,0,.06)
+		&:before
+			top: -60px
+			left: -60px
 	&:focus
 		color: #ffffff
 		text-decoration: none
 		outline: 0
-	&:hover
-		color: #ffffff
-		text-decoration: none
 	&:visited
 		color: #ffffff
 		text-decoration: none
@@ -158,17 +181,77 @@ a
 		max-width: 326px
 	&.lite
 		color: $light-green
-		padding: 17px 35px 15px
+		padding: 16px 35px 16px
 		background-color: transparent
 		border: 1px solid $light-green
+		transition: all .7s
+		&:before
+			content: ''
+			position: absolute
+			top: -25px
+			left: 55%
+			transform: translate(-50%, -50%) scale(1)
+			display: block
+			width: 60px
+			height: 60px
+			background: $light-green
+			border-radius: 50%
+			transition: all .7s
+		&:hover
+			color: #ffffff
+			transform: scale(1)
+			&:before
+				transform: scale(8.3)
 	&.disabled
 		background-color: #b1e0d9
 		&:hover
 			background-color: #b1e0d9
+	&.small
+		color: $dark-blue
+		font: 12px Roboto, sans-serif
+		border-radius: 3px
+		padding: 8px 20px 8px
+		background-color: #e5e5e5
+		transition: all .7s
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: -200%
+			z-index: -1
+			background-color: $light-green
+			height: 400px
+			width: 400px
+			border-radius: 50%
+			transition: all .7s
+		&:hover
+			transform: scale(1)
+			color: #ffffff
+			&:before
+				top: -60px
+				left: -60px
+			
 
 .btn-wrap
 	width: 100%
 	text-align: center
+
+
+input[type="text"],
+textarea
+	border-radius: 23px
+	line-height: 1
+	padding: 12px 22px 12px
+	border: 1px solid $light-green
+	&:focus
+		outline: 0
+	@include placeholder
+		color: $dark-blue
+		opacity: .49
+
+textarea
+	resize: none
+
 
 .social
 	display: inline-block
@@ -179,23 +262,30 @@ a
 		&:last-of-type
 			margin: 0
 		&:hover
+			text-decoration: none
 			i
-				color: lighten($light-green, 20%)
+				color: lighten($light-green, 8%)
+		&:focus
+			outline: 0
+			text-decoration: none
+		&:visited
+			text-decoration: none
 	i	
 		color: $light-green
 		font-size: 39px
-		transition: color .3s ease
+		transition: color .7s ease
 		&:before
 			display: block
 			margin: 0
 
 
 .check-auto
+	padding-top: 58px
 	&-wrap
 		display: flex
 		justify-content: center
 		flex-flow: wrap
-		margin: 58px auto 0
+		margin: 0 auto
 	&-item
 		position: relative
 		display: block
@@ -203,14 +293,15 @@ a
 		max-width: 447px
 		text-align: left
 		margin: 0 58px 83px
-		box-shadow: inset hoff voff blur color	0 0 36px rgba(0,0,0,.06)
+		box-shadow: 0 0 36px rgba(0,0,0,.06)
 		&-topline
 			background-color: #FFF
 			width: 100%
 			position: relative
-			padding: 13px 175px 10px 15px
+			padding: 10px 175px 10px 15px
 			border-left: 5px solid $light-green
 		h2
+			font-size: 25px
 			margin: 0 0 13px
 		ul
 			padding: 0
@@ -228,25 +319,23 @@ a
 					color: $light-green
 					margin-right: 7px
 		&-price
-			display: inline-block
+			display: flex
+			font-family: column
+			align-items: center
 			position: absolute
 			top: 0
 			right: 0
 			height: 100%
-			color: #a6a8aa
-			font: 21px ClearSans, sans-serif
-			line-height: 1
-			padding: 35px 21px 
+			padding: 0 21px
 			background-color: #edecec
-			i
-				font-size: 16px
-				position: relative
-				bottom: 2px
+			span
+				color: #a6a8aa
+				font: 21px Roboto, sans-serif
+				line-height: 1
 		.img-wrap
 			position: relative
 			width: 100%
 			height: 241px
-			overflow: hidden
 			a
 				display: block
 				cursor: pointer
@@ -399,8 +488,8 @@ a
 		.destinations-text
 			padding: 20px 20px 32px
 		h2
-			font-size: 25px
-			margin-bottom: 16px
+			font-size: 23px
+			margin-bottom: 15px
 			padding-right: 0
 		p
 			margin-bottom: 24px
@@ -408,14 +497,24 @@ a
 			display: block
 			margin: 0 auto
 	& + .button
-		margin: 36px 0 36px
+		margin: 36px 0 30px
 
 
 .counters-sec
 	position: relative
+	overflow: hidden
 	padding: 145px 0
+
+.counters-bg
+	position: absolute
+	top: -140%
+	left: 0
+	width: 100%
+	height: 140%
 	background: url(../img/counters-bg.jpg) center
 	background-size: cover
+	z-index: -1000
+	
 
 .counters
 	display: flex
@@ -427,10 +526,10 @@ a
 		span
 			display: block
 			font: 51px DroidSansBold, sans-serif
-			margin-bottom: 13px
+			margin-bottom: 11px
 			line-height: 1
 		p
-			font: 16px Designosaur, sans-serif
+			font: 16px ClearSans, sans-serif
 			margin: 0
 			line-height: 20px
 
@@ -507,7 +606,7 @@ a
 		margin-Left: 2px
 		background-color: #e5e5e5
 		text-align: center
-		transition: background-color .2s ease
+		transition: background-color .7s ease
 		&:first-child,
 		&:last-child
 			background-color: lighten($light-green, 3%)
@@ -651,16 +750,7 @@ a
 		&:last-child
 			margin-right: 0
 	.button
-		color: $dark-blue
-		font: 12px Roboto, sans-serif
-		border-radius: 3px
-		padding: 9px 20px 7px
 		margin: 6px 0 29px
-		background-color: #e5e5e5
-		transition: all .2s ease
-		&:hover
-			color: #fff
-			background-color: $light-green
 
 .contacts-form
 	.contacts-lables-wrap	
@@ -682,17 +772,10 @@ a
 			background-position: 0 1px
 		input
 			width: 100%
-			border-radius: 23px
-			line-height: 1
-			font-size: 17px
-			padding: 12px 22px 12px
-			border: 1px solid $light-green
-			&:focus
-				outline: 0
 			@include placeholder
 				color: $light-green
 		.button
-			padding: 17px 35px 15px
+			padding: 16px 35px
 			width: 100%
 			max-width: 248px
 			border-radius: 23px
@@ -716,6 +799,393 @@ a
 				color: $light-green
 	input[type="checkbox"]:checked + label
 		background: url('../img/technical/checkbox-checked.svg') left center no-repeat
+
+
+.main-form
+	.topline
+		margin-bottom: 28px
+		label
+			display: inline-block
+			width: 100%
+			max-width: 148px
+			color: $dark-blue
+			font: 15px Roboto, sans-serif
+			line-height: 1
+			text-align: center
+			border-radius: 3px
+			padding: 8px 20px 9px
+			margin-right: 15px
+			background-color: #e5e5e5
+			cursor: pointer
+			transition: all .2s ease
+			&:last-child
+				margin-right: 0
+			&:hover
+				color: #fff
+				background-color: $light-green
+		input[type="radio"]
+			display: none
+		input[type="radio"]:checked + label
+			color: #fff
+			background-color: $light-green
+	&-row
+		display: table-row
+	&-cell
+		display: table-cell
+		padding-bottom: 22px
+		vertical-align: top
+		&.large
+			width: 856px
+		&.label
+			width: 156px
+			padding-top: 12px
+		&.common
+			padding-bottom: 0
+		&.contacts
+			width: 323px
+		&.phone
+			position: relative
+			img
+				position: absolute
+				top: 2px
+				left: 20px
+				width: 25px
+				height: 17px
+				border: 1px solid #bab9b8
+			label:before
+				content: ''
+				position: absolute
+				top: 10px
+				left: 52px
+				border: 4px solid transparent
+				border-top: 4px solid #a8a9aa
+				display: block
+				width: 0
+				height: 0
+	label
+		position: relative
+		i
+			position: absolute
+			color: lighten($light-green, 3%)
+			font-size: 17px
+			line-height: 1
+			top: 2px
+			left: 13px
+	input[type="text"]
+		padding-left: 41px
+		&.geo, 	
+		&.name
+			width: 100%
+		&.date
+			width: 100%
+			max-width: 258px
+		&.time
+			width: 100%
+			max-width: 199px
+		&.phone
+			width: 100%
+			max-width: 323px
+			padding-left: 68px
+		&.email
+			width: 100%
+			max-width: 323px
+		&.promo
+			width: 100%
+			max-width: 267px
+			padding: 12px 22px 12px
+	textarea
+		width: 100%
+		height: 153px
+	.label, .label-inner
+		font: 16px RobotoMedium, sans-serif
+	.label-inner
+		padding: 12px 34px 0
+	.passengers
+		width: 100%
+		max-width: 294px
+		position: relative
+		color: lighten($light-green, 3%)
+		border-radius: 23px
+		line-height: 46px
+		font-size: 16px
+		padding: 0 22px 0 41px
+		border: 1px solid $light-green
+		i
+			position: absolute
+			color: lighten($light-green, 3%)
+			font-size: 17px
+			line-height: 1
+			top: 13px
+			left: 12px
+		span
+			display: inline-block
+			color: #000
+			min-width: 22px
+			text-align: center
+
+	.check-auto-wrap
+		justify-content: space-between
+
+	.check-auto-item
+		max-width: 422px
+		margin: 0 0 83px 50px
+		label:hover
+			img
+				opacity: 1
+		li:before
+			display: none			
+		h2
+			font-size: 23px
+			margin: 0 0 8px
+		&-price
+			span
+				color: darken($light-green, 4%)
+		.img-wrap
+			height: 228px
+			label
+				display: block
+				cursor: pointer
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+				position: absolute
+				&:hover
+					img
+						opacity: 0.8
+				&:after
+					content: ''
+					position: absolute
+					left: -5px
+					top: 54px
+					bottom: 0
+					width: 10px
+					height: 10px
+					border-radius: 50%
+					margin: auto 0
+					transform: scale(0)
+					background: $light-green url('../img/technical/check-auto-radio.svg') center no-repeat
+					background-size: 6.2px 4.5px
+					opacity: 0
+					transition: all .3s ease
+			input[type="radio"]
+				display: none
+				&:checked + label:after
+					transform: scale(10)
+					opacity: 1
+				&:checked + label img
+					opacity: 1
+	.btn-wrap
+		padding: 10px 0 4px
+	.pay-method
+		padding-bottom: 22px
+		input[type=radio]
+			display: none
+		.pay-method-item
+			position: relative
+		.pay-method-label
+			position: relative
+			display: inline-block
+			line-height: 1
+			border-radius: 4px
+			padding: 21px 20px 20px 42px
+			margin-bottom: 6px
+			cursor: pointer
+			transition: all .6s ease
+			.pay-method-radio
+				position: absolute
+				width: 16px
+				height: 16px
+				border-radius: 50%
+				border: 2px solid #bcbcbc
+				top: 0
+				bottom: 0
+				left: 18px
+				margin: auto 0
+				transition: all .3s ease
+			&:hover
+				background-color: #f0f0f0
+				.pay-method-radio
+					border: 5px solid #bcbcbc
+		input[type=radio]:checked + label
+			color: #fff
+			background-color: $light-green
+			transition: all .2s ease
+			.pay-method-radio
+				border: 5px solid #fff
+				transition: all .2s ease
+
+.pay-method-dropdown
+	position: absolute
+	display: none
+	left: 0	
+	top: 60px
+	min-width: 287px
+	border-radius: 5px
+	background-color: #fff
+	box-shadow: 1px 1px 3px rgba(0,0,0,.34)
+	&:after
+		content: ''
+		position: absolute
+		top: -20px
+		left: 31px
+		border: 10px solid transparent
+		border-bottom: 10px solid #fff
+		display: block
+		width: 0
+		height: 0
+	li
+		color: #716e6e
+		line-height: 33px
+		padding: 8px 23px 8px 10px
+		margin-bottom: 0
+		cursor: pointer
+		transition: background-color .2s ease
+		&:first-child
+			border-top-left-radius:  4px
+			border-top-right-radius: 4px
+		&:last-child
+			border-bottom-left-radius:  4px
+			border-bottom-right-radius: 4px
+		&:hover
+			background-color: #ededed
+		&:before
+			display: none
+	img
+		width: 53px
+		height: 33px
+		border-radius: 4px
+		margin-right: 23px
+		box-shadow: 0 0 7px rgba(0,0,0,.18)
+		float: left
+
+
+.destinations-inner-content
+	width: 100%
+	position: relative
+	margin-bottom: 15px
+	border-radius: 4px
+	box-shadow: 0 0 18px (0,0,0,.04)
+	.text-block
+		border-top-right-radius: 0px
+		border-top-left-radius: 0px
+		box-shadow: 0 0 0 transparent
+		padding-top: 95px
+		h4:first-of-type
+			margin-top: 60px
+	& + .check-auto
+		padding-top: 0
+		h3
+			margin-bottom: 35px
+.destinations-inner-slider
+	width: 100%
+	height: 436px
+	position: relative
+
+.slider-slideshow
+	width: 100%
+	height: 100%
+	overflow: hidden
+	background: #d8d5d5
+	border-top-left-radius: 4px
+	border-top-right-radius: 4px
+	img
+		width: 100%
+		height: 100%
+		border-top-left-radius: 4px
+		border-top-right-radius: 4px
+
+.slider-next,
+.slider-prev,
+.slider-enlarge
+	position: absolute
+	background-size: cover
+	cursor: pointer
+	z-index: 1000
+	opacity: 0.18
+	transition: opacity .7s ease
+	&:hover
+		opacity: 0.7
+
+.slider-prev, .slider-next
+	height: 72px
+	width: 41px
+	top: 0
+	bottom: 0
+	margin: auto 0
+	background: url("../img/technical/slider-arrow.svg") no-repeat
+
+.slider-enlarge
+	height: 72px
+	width: 72px
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+	background: url("../img/technical/slider-enlarge.svg") no-repeat
+
+.mfp-no-margins img.mfp-img 
+	padding: 0
+
+.mfp-no-margins .mfp-figure:after 
+	top: 0
+	bottom: 0
+
+.mfp-no-margins .mfp-container 
+	padding: 0 0
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg 
+	opacity: 0
+	transition: all 0.3s ease-out
+
+.mfp-with-zoom.mfp-ready .mfp-container 
+		opacity: 1
+
+.mfp-with-zoom.mfp-ready.mfp-bg 
+		opacity: 0.8
+
+.mfp-with-zoom.mfp-removing .mfp-container, 
+.mfp-with-zoom.mfp-removing.mfp-bg 
+	opacity: 0
+	transition: all .3s ease-in-out
+
+.slider-prev
+	left: 0
+.slider-next
+	right: 0
+	transform: scaleX(-1)
+
+.slider-pager
+	margin: 0 auto
+	position: absolute!important
+	left: 0
+	right: 0
+	bottom: -36px
+	margin: 0 auto
+	text-align: center
+	z-index: 1000
+	.img-wrap
+		display: inline-block
+		width: 112px
+		height: 78px
+		border-radius: 2px
+		border: 2px solid rgba(245,243,243,.2)
+		background-color: #d8d5d5
+		overflow: hidden
+		margin-left: 5px
+		margin-right: 5px
+		cursor: pointer
+		transition: border .3s ease
+		img
+			width: 100%
+			height: 100%
+			opacity: 0.95
+		&.sp-active
+			border: 2px solid lighten($light-green, 3%)
+			img
+				opacity: 1
 
 
 footer
@@ -752,16 +1222,7 @@ footer
 	.social
 		margin-bottom: 10px
 	.button
-		color: $dark-blue
-		font: 12px Roboto, sans-serif
-		border-radius: 3px
-		padding: 9px 20px 7px
 		margin: 6px 0 29px
-		background-color: #e5e5e5
-		transition: all .2s ease
-		&:hover
-			color: #fff
-			background-color: $light-green
 	.pay-methods
 		display: inline-block
 		img
@@ -823,28 +1284,66 @@ footer
 			margin-bottom: 10px
 			&:last-child
 				margin-bottom: 0
-		
 
 
+.popup
+	position: relative
+	max-width: 354px
+	display: flex
+	flex-flow: column 
+	text-align: center
+	padding: 25px 30px 30px
+	margin:  auto
+	border-radius: 5px
+	background-color: #fff
+	h4
+		margin: 0 0 16px
+	p
+		font-size: 14px
+	label
+		width: 100%
+		margin: 0 auto 14px
+		text-align: left
+		&:nth-of-type(3)
+			margin: 0
+		input
+			width: 100%
+	input[type=checkbox]
+		display: none
+	input[type=checkbox] + label
+		font-size: 14px
+		line-height: 1.2
+		margin: 13px auto 14px
+		padding-left: 25px
+		background: url('../img/technical/checkbox.svg') 0 3px no-repeat
+		cursor: pointer
+	input[type=checkbox]:checked + label
+		background: url('../img/technical/checkbox-checked.svg') 0 3px no-repeat
+	.button
+		width: 100%
 
+.mfp-fade.mfp-bg 
+  opacity: 0
+  transition: all 0.3s ease-out
 
+.mfp-fade.mfp-bg.mfp-ready 
+  opacity: 0.8
 
+.mfp-fade.mfp-bg.mfp-removing 
+  opacity: 0
 
-				
+.mfp-fade.mfp-wrap .mfp-content 
+  opacity: 0
+  transition: all 0.3s ease-out
 
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content 
+  opacity: 1
 
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content 
+  opacity: 0
 
-
-
-
-
-
-
-
-
-			
-		
-
+	
+	
 
 
 //ALWAYS END
@@ -852,3 +1351,4 @@ footer
 
 //Load Libs SASS
 @import "app/libs/express-transfers-iconfont/express-transfers-iconfont"
+@import "app/libs/magnific/magnific-popup"

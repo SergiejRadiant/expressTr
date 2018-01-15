@@ -324,6 +324,7 @@
 
 				<div class="check-auto-item">
 					<div class="check-auto-item-topline">
+					
 						<h2>Бизнес-класс</h2>
 						<ul>
 							<li>
@@ -331,10 +332,11 @@
 							<li>
 								<i class="icon-case"></i>3</li>
 						</ul>
+						
 						<div class="check-auto-item-price">
-							от 23 000
-							<i class="icon-euro"></i>
+							<span>от 23 000 &euro;</span>
 						</div>
+				
 					</div>
 					<div class="img-wrap">
 						<a href="#">
@@ -350,6 +352,7 @@
 
 				<div class="check-auto-item">
 					<div class="check-auto-item-topline">
+					
 						<h2>Бизнес-класс</h2>
 						<ul>
 							<li>
@@ -357,10 +360,11 @@
 							<li>
 								<i class="icon-case"></i>3</li>
 						</ul>
+					
 						<div class="check-auto-item-price">
-							от 23 000
-							<i class="icon-euro"></i>
+							<span>от 23 000 &euro;</span>
 						</div>
+				
 					</div>
 					<div class="img-wrap">
 						<a href="#">
@@ -413,11 +417,6 @@
 				</div>
 			</div>
 
-
-
-
-
-
 			<div class="text-block">
 
 				<h4>Как мы работаем</h4>
@@ -450,10 +449,6 @@
 				</div>
 			</div>
 
-
-
-
-
 			<div class="text-block">
 				<h4>Заголовок небольшой</h4>
 
@@ -485,7 +480,6 @@
 						<a href="#">Lorem ipsum dolor sit</a> magnam ab blanditiis suscipit saepe doloribus nisi neque accusantium totam a.</li>
 					<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, odio.</li>
 				</ul>
-
 
 			</div>
 		</div>
@@ -577,6 +571,10 @@
 	</section>
 
 	<section class="counters-sec">
+
+		<div class="counters-bg">
+		</div>
+
 		<div class="container">
 
 			<div class="counters">
@@ -815,23 +813,20 @@
 						</div>
 					</div>
 
-					<a href="#" class="button">Заказать звонок</a>
+					<a href="#popup-form" class="button small popup-form-btn">Заказать звонок</a>
 
 					<div class="pay-methods">
-						<img src="img/pay-methods/1.png" alt="">
+			
+						<img src="img/pay-methods/visa.svg" alt="">
 
-						<img src="img/pay-methods/1.png" alt="">
+						<img src="img/pay-methods/mc.svg" alt="">
 					
-						<img src="img/pay-methods/1.png" alt="">
+						<img src="img/pay-methods/pp.svg" alt="">
 
-						<img src="img/pay-methods/1.png" alt="">
+						<img src="img/pay-methods/ae.svg" alt="">
 
-						<img src="img/pay-methods/1.png" alt="">
-
-						<img src="img/pay-methods/1.png" alt="">
-
-						<img src="img/pay-methods/1.png" alt="">
 					</div>
+		
 				</div>
 
 
@@ -844,11 +839,38 @@
 				</p>
 			</div>
 
-
 		</div>
 	</footer>
 
-	<div class="hidden"></div>
+	<div class="hidden">
+		<form id="popup-form" action="#" class="popup">
+			<h4>Форма обратной связи</h4>
+		
+			<p>Оставьте свой номер телефона и мы перезвоним Вам в ближайшее время.</p>
+		
+			<label>
+				<input type="text" placeholder="Имя">
+			</label>
+		
+			<label>
+				<input type="text" placeholder="E-mail">
+			</label>
+		
+			<label>
+				<input type="text" placeholder="Телефон">
+			</label>
+		
+			<input type="checkbox" name="contacts-checkbox" id="contacts-checkbox">
+		
+			<label class="checkbox" for="contacts-checkbox">
+				Принимаю условия
+				<a href="#">пользовательского соглашения</a>
+			</label>
+		
+			<button class="button">Отправить</button>
+		
+		</form>
+	</div>
 	<!--[if lt IE 9]>
 		<script src="libs/html5shiv/es5-shim.min.js"></script>
 		<script src="libs/html5shiv/html5shiv.min.js"></script>
