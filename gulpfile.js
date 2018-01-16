@@ -32,6 +32,7 @@ gulp.task('scripts', function() {
 	return (gulp
       .src([
         "./app/libs/jquery/jquery-3.2.1.min.js",
+        './app/libs/datepicker/jquery-ui.min.js',
         "./app/libs/cycle2/jquery.cycle2.min.js",
         "./app/libs/cycle2/jquery.cycle2.carousel.min.js",
         "./app/libs/magnific/jquery.magnific-popup.min.js",

@@ -43,44 +43,45 @@
 
 <body>
 
-	<header class="main-header hidden">
-
+	<!-- header -->
+	<header class="main-header">
+	
 		<div class="topline">
 			<div class="container">
-
+	
 				<div class="topline-wrap">
-
+	
 					<img class="logo" src="img/logo.svg" alt="Express-Transfers">
-
+	
 					<ul>
-
+	
 						<li class="switch-lang-btn dropdown">
-
+	
 							<span>
 								<img class="drop-down-icon" src="img/languages/drop-down-icon.svg " alt="drop-down-icon ">
 								<img class="lang-icon dropdown-target" src="img/languages/ru.svg " alt="lang-icon ">
 							</span>
-
+	
 							<ul class="dropdown-content">
 								<li>
-									<a href="#">
+									<a href="/">
 										<img class="lang-icon" src="img/languages/ru.svg " alt="lang-icon "> Русский
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="/">
 										<img class="lang-icon" src="img/languages/ru.svg " alt="lang-icon "> Русский
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="/">
 										<img class="lang-icon" src="img/languages/ru.svg " alt="lang-icon "> Русский
 									</a>
 								</li>
 							</ul>
-
+	
 						</li>
-
+	
 						<li class="active">
 							<a href="#">Главная</a>
 						</li>
@@ -99,224 +100,255 @@
 						<li>
 							<a href="#">Контакты</a>
 						</li>
+						<li>
+							<a href="#">Контакты</a>
+						</li>
 					</ul>
-
+	
 				</div>
-
+	
 			</div>
 		</div>
-
-		<div class="tagline">
+	
+		<div class="header-text">
 			<div class="container">
-				Transfer & chauffeur service
+				<h1 class="tagline">Transfer & chauffeur service</h1>
 			</div>
 		</div>
-
+		
 		<div class="header-bottom-line">
 			<div class="container">
+				
+				<!-- tabs-container -->
+				<div class="tabs-container">
 
-				<ul class="tabs-controls">
-					<li class="tabs-controls-item active">
-						Туда и обратно
-					</li>
-					<li class="tabs-controls-item">
-						В один конец
-					</li>
-					<li class="tabs-controls-item">
-						Индивидуальные условия
-					</li>
-					<li class="tabs-controls-item review-form-tab">
-						Оставить отзыв
-					</li>
-				</ul>
+					<!-- tabs-controls -->
+					<div class="tabs-controls">
+						<div class="tabs-controls-item active">Туда и обратно</div>
+						<div class="tabs-controls-item">В один конец</div>
+						<div class="tabs-controls-item">Индивидуальные условия</div>
+						<div class="tabs-controls-item review-form-tab">Оставить отзыв</div>
+					</div>
+					<!-- tabs-controls -->
 
-				<ul class="tabs-content">
+					<!-- tabs-content -->
+					<div class="tabs-content">
+						
+						<!-- tabs-item-->
+						<div class="tabs-item">
+							<form action="#" class="header-main-form" id="order-form"">
 
-					<li class="tabs-item active">
-						<form action="#" class="header-main-form">
-							<label class="text" for="#">
-								<a href="#">
-									<i class="icon-map-mark"></i>
-								</a>
-								<input type="text" placeholder="Откуда: аэропорт, вокзал..."></input>
-							</label>
-							<label class="text" for="#">
-								<a href="#">
-									<i class="icon-map-mark"></i>
-								</a>
-								<input type="text" placeholder="Куда: Отель, аэропорт..."></input>
-							</label>
-							<label class="date" for="#">
-								<a href="#">
-									<i class="icon-calendar"></i>
-								</a>
-								<input type="date" placeholder="Дата трансфера"></input>
-							</label>
-							<label class="date" for="#">
-								<a href="#">
-									<i class="icon-calendar"></i>
-								</a>
-								<input type="date" placeholder="Поездка обратно"></input>
-							</label>
-							<label class="passengers" for="#">
-								<span href="#">
-									<i class="icon-man"></i>
-								</span>
-								<input type="text" placeholder="2"></input>
-							</label>
-						</form>
-					</li>
+								<!-- form-header -->
+								<div class="form-header">
+									
+									<label class="text">
+										<i class="icon-map-mark"></i>
+										<input type="text" name="from" class="autocomplate" placeholder="Откуда: аэропорт, вокзал...">
+									</label>
 
-					<li class="tabs-item">
-						<form action="#" class="header-main-form">
-							<label class="text" for="#">
-								<a href="#">
-									<i class="icon-map-mark"></i>
-								</a>
-								<input type="text" placeholder="Откуда: аэропорт, вокзал..."></input>
-							</label>
-							<label class="text" for="#">
-								<a href="#">
-									<i class="icon-map-mark"></i>
-								</a>
-								<input type="text" placeholder="Куда: Отель, аэропорт..."></input>
-							</label>
-							<label class="date" for="#">
-								<a href="#">
-									<i class="icon-calendar"></i>
-								</a>
-								<input type="date" placeholder="Дата трансфера"></input>
-							</label>
-							<label class="date" for="#">
-								<a href="#">
-									<i class="icon-calendar"></i>
-								</a>
-								<input type="date" placeholder="Поездка обратно" disabled></input>
-							</label>
-							<label class="passengers" for="#">
-								<span href="#">
-									<i class="icon-man"></i>
-								</span>
-								<input type="text" placeholder="2"></input>
-							</label>
-						</form>
-					</li>
+									<label class="text">
+										<i class="icon-map-mark"></i>
+										<input type="text" name="endpoint" class="autocomplate" placeholder="Куда: Отель, аэропорт...">
+									</label>
 
-					<li class="tabs-item">
+									<label class="date" for="#">
+										<i class="icon-calendar"></i>
+										<input type="text" class="datepicker" placeholder="Дата трансфера">
+									</label>
 
-						<form action="#" class="simple-form">
+									<label class="date">
+										<i class="icon-calendar"></i>
+										<input type="text" class="datepicker" placeholder="Поездка обратно">
+									</label>
 
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cumque laboriosam? Quidem possimus, et odio consequuntur
-								earum officia explicabo? Nisi cum tempore odio aperiam, id magnam exercitationem dolores blanditiis sapiente provident
-								corporis fugiat perspiciatis dicta culpa possimus iusto iste vitae.</p>
+									<label class="passengers dropdown">
 
-							<div class="left-block">
-								<input type="text" plaseholder="Имя">
-								<input type="text" plaseholder="Телефон">
-								<input type="text" plaseholder="E-mail">
-							</div>
+										<i class="icon-man"></i>
+										<input type="text" disabled="" name="Total"  placeholder="2">
+										
+										<!-- dropdown-content -->
+										<div class="dropdown-content">
 
-							<div class="right-block">
-								<textarea name="name" id="" placeholder="Комментарий"></textarea>
-							</div>
+											<input type="hidden" name="Children" value="0">
+											<input type="hidden" name="Adults" value="0">
+											
+											<div class="count-passengers">
+												<h5>Взрослые</h5>
+												<div class="counter" data-input="Adults">
+													<i class="icon-man"></i>
+													<input type="text" disabled="" name="Adults" value="0">
+													<div class="inc btn">+</div>
+													<div class="dec btn">-</div>
+												</div>
+											</div>
 
-							<div class="checkboxes-wrap">
-								<ul class="checkboxes">
+											<div class="count-passengers">
+												<h5>Дети < 12 y.o.</h5>
+												<div class="counter" data-input="Children">
+													<i class="icon-man"></i>
+													<input type="text" disabled="" name="Children" value="0">
+													<div class="inc btn">+</div>
+													<div class="dec btn">-</div>
+												</div>
+											</div>
 
-									<li>
+										</div>
+										<!-- dropdown-content -->
 
-										<label for="checkbox-1" name="check" value="check1" class="simple-form-checkbox-label">
-										</label>
+									</label>
 
-										<input type="checkbox" name="check" value="check1" id="checkbox-1">
+								</div>
+								<!-- form-header -->
+								
+								<!-- form-content -->
+								<div class="form-content">
+									
+									<div class="check-auto-wrap">
 
-										<p> Я принимаю условия
-											<a href="#">пользовательского соглашения</a>
-										</p>
+										<div class="check-auto-item">
 
-									</li>
+											<div class="check-auto-item-topline">
 
-									<li>
+												<h2>Бизнес-класс</h2>
+												<ul>
+													<li><i class="icon-man"></i>3</li>
+													<li><i class="icon-case"></i>3</li>
+												</ul>
 
-										<label for="checkbox-2" name="check2" value="check2" class="simple-form-checkbox-label">
-										</label>
+												<div class="check-auto-item-price">
+													<span>от 23 000 &euro;</span>
+												</div>
 
-										<input type="checkbox" name="check2" value="check2" id="checkbox-2">
+											</div>
 
-										<p> Ответить в письме </p>
+											<div class="img-wrap">
+												<a href="#">
+													<img src="img/check-auto-business.jpg" alt="Бизнесс класс">
+												</a>
+											</div>
 
-									</li>
+											<div class="btn-wrap">
+												<button class="button">Заказать трансфер</button>
+											</div>
 
-								</ul>
-							</div>
+										</div>
 
-							<button class="button large">Отправить</button>
+										<div class="check-auto-item">
 
-						</form>
+											<div class="check-auto-item-topline">
 
-					</li>
+												<h2>Бизнес-класс</h2>
+												<ul>
+													<li><i class="icon-man"></i>3</li>
+													<li><i class="icon-case"></i>3</li>
+												</ul>
 
-					<li class="tabs-item">
+												<div class="check-auto-item-price">
+													<span>от 23 000 &euro;</span>
+												</div>
 
+											</div>
 
-						<form action="#" class="simple-form review-form">
+											<div class="img-wrap">
+												<a href="#">
+													<img src="img/check-auto-business.jpg" alt="Бизнесс класс">
+												</a>
+											</div>
+											<div class="btn-wrap">
+												<button class="button">Заказать трансфер</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- form-content -->
 
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cumque laboriosam? Quidem possimus, et odio consequuntur
-								earum officia explicabo? Nisi cum tempore odio aperiam, id magnam exercitationem dolores blanditiis sapiente provident
-								corporis fugiat perspiciatis dicta culpa possimus iusto iste vitae.</p>
+							</form>
+						</div>
+						<!-- tabs-item-->
 
-							<div class="left-block">
-								<input type="text" plaseholder="Имя">
-								<input type="text" plaseholder="E-mail">
-							</div>
+						
 
-							<div class="right-block">
-								<textarea name="name" id="" placeholder="Ваш отзыв"></textarea>
-							</div>
+						<!-- tabs-item-->
+						<div class="tabs-item">
+							<form action="#" class="header-main-form">
+								
+								<!-- form-content -->
+								<div class="form-content">
+									
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cumque laboriosam? Quidem possimus, et odio consequuntur
+										earum officia explicabo? Nisi cum tempore odio aperiam, id magnam exercitationem dolores blanditiis sapiente provident
+										corporis fugiat perspiciatis dicta culpa possimus iusto iste vitae.</p>
+									
+									<div class="input-group-table">
 
-							<div class="checkboxes-wrap">
-								<ul class="checkboxes">
+										<div class="group-item">
+											<input type="text" placeholder="Имя">
+											<input type="text" placeholder="Телефон">
+											<input type="text" placeholder="E-mail">
+										</div>
 
-									<li>
+										<div class="group-item">
+											<textarea name="name" id="" placeholder="Комментарий"></textarea>
+										</div>
 
-										<label for="checkbox-1" name="check" value="check1" class="simple-form-checkbox-label">
-										</label>
-
-										<input type="checkbox" name="check" value="check1" id="checkbox-1">
-										<p> Я принимаю условия
-											<a href="#">пользовательского соглашения</a>
-										</p>
-
-									</li>
-
-									<li>
-
-										<label for="checkbox-2" name="check2" value="check2" class="simple-form-checkbox-label">
-										</label>
-
-										<input type="checkbox" name="check2" value="check2" id="checkbox-2">
-										<p> Ответить в письме </p>
-
-									</li>
-
-								</ul>
-							</div>
-
-							<button class="button large">Отправить</button>
-
-						</form>
+									</div>
 
 
-					</li>
+									<button class="button">Отправить</button>
 
-				</ul>
+								</div>
+								<!-- form-content -->
+
+
+							</form>
+						</div>
+						<!-- tabs-item-->
+
+						<!-- tabs-item-->
+						<div class="tabs-item">
+							<form action="#" class="header-main-form">
+
+								<!-- form-content -->
+								<div class="form-content">
+									
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cumque laboriosam? Quidem possimus, et odio consequuntur
+										earum officia explicabo? Nisi cum tempore odio aperiam, id magnam exercitationem dolores blanditiis sapiente provident
+										corporis fugiat perspiciatis dicta culpa possimus iusto iste vitae.</p>
+									
+									<div class="input-group-table">
+
+										<div class="group-item">
+											<input type="text" placeholder="Имя">
+											<input type="text" placeholder="Телефон">
+										</div>
+
+										<div class="group-item">
+											<textarea name="name" id="" placeholder="Комментарий"></textarea>
+										</div>
+
+									</div>
+
+
+									<button class="button">Отправить</button>
+
+								</div>
+								<!-- form-content -->
+
+							</form>
+						</div>
+						<!-- tabs-item-->
+
+				</div>
+				<!-- tabs-content -->
 
 			</div>
+			<!-- tabs-container -->
+
 		</div>
-
 	</header>
+	<!-- header -->
 
-	<section class="check-auto grey">
+	<section class="check-auto grey" id="check-auto">
 
 		<div class="container">
 
@@ -879,16 +911,22 @@
 		<![endif]-->
 
 	<!-- Load Scripts Start -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6PcDZP9jOv5-AWSnJyxD-NKspkPrfk&libraries=places"></script>
 	<script>
 		var scr = {
-			"scripts": [{
-				"src": "js/libs.js",
-				"async": false
-			},
-			{
-				"src": "js/common.js",
-				"async": false
-			}
+			"scripts": [
+				{
+					"src": "js/libs.js",
+					"async": false
+				},
+				{
+					"src": "js/common.js",
+					"async": false
+				},
+				{	
+					"src" : "js/i18n/datepicker-ru.js", 
+					"async" : false
+				}
 			]
 		};
 		! function (t, n, r) {
