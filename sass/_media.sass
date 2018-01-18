@@ -4,6 +4,26 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1199px)
+	header
+		.topline
+			.logo
+				width: 116px
+				height: 44px
+			li
+				> a
+					font-size: 13px!important
+				.lang-icon
+					width: 22px
+		&.main-header
+			.header-bottom-line
+				margin-top: 115px
+
+	.form-content
+		.check-auto
+			padding-top: 50px
+			&-item
+				margin-bottom: 40px
+
 	.check-auto
 		&-item
 			max-width: 390px
@@ -13,7 +33,7 @@
 			h2
 				font-size: 24px
 			.img-wrap
-				height: 216px
+				height: 212px
 
 	.main-form
 		&-cell.label,
@@ -131,10 +151,53 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
+	header
+		.topline
+			ul
+				display: none
+		&.main-header
+				.header-bottom-line
+					margin-top: 0
+
+	.tabs-controls-item:nth-child(1),
+	.tabs-controls-item:nth-child(2),
+	.tabs-controls-item:nth-child(3)
+		margin-left: 1.5px!important
+		margin-right: 1.5px!important
+	.tabs-controls-item.reviev-form-tab
+		margin-right: 1.5px!important
+	.form-header
+		flex-wrap: wrap
+		align-content: stretch
+		label
+			margin-left: 1.5px!important
+			margin-right: 1.5px!important
+			margin-bottom: 4px
+			&.date
+				max-width: 321px!important
+			&.passengers
+				max-width: 69px!important
+	.form-content
+		.check-auto
+			padding-top: 37px
+			&-item:last-child
+				margin-bottom: 47px!important
+
 	.how-we-work-item
 		max-width: 224px
 		img
 			height: 111px
+
+	.input-group-table
+		max-width: 600px!important
+		flex-flow: column
+		.group-item
+			max-width: 100%!important
+			margin-right: 0!important
+			&:first-child
+				margin-bottom: 8px
+		textarea
+			height: 130px!important
 
 	.advantages-item
 		max-width: 179px
@@ -181,9 +244,6 @@
 
 	.counters-sec
 		padding: 115px 0
-
-	.counters-bg
-		top: -223%
 
 	.counters
 		span
@@ -293,12 +353,39 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	.tabs-controls
+		max-width: 660px
+		margin-left: auto!important
+		margin-right: auto!important
+		justify-content: space-between
+		&-item
+			line-height: 1.2!important
+			padding: 7px 8px!important
+			font-size: 13.5px!important
+			flex-grow: 1
+			i
+				font-size: 13.5px!important
+		.review-form-tab
+			margin-left: 1.5px!important
+	
+	.form-header
+		max-width: 660px
+		margin-left: auto!important
+		margin-right: auto!important
+		flex-direction: column
+		flex-wrap: no-wrap
+		align-content: stretch
+		label
+			margin-left: 0!important
+			margin-right: 0!important
+			margin-bottom: 4px
+			&.date
+				max-width: 100%!important
+			&.passengers
+				max-width: 100%!important
+	
 	.counters-sec
 		padding: 67px 0
-	.counters-bg
-		top: 0
-		height: 100%
-		transform: translate(0, 0)!important
 	.counters
 		flex-flow: column
 		align-items: center
@@ -346,6 +433,18 @@
 
 
 @media only screen and (max-width : 619px)
+	.tabs-controls-item
+		font-size: 11.5px!important
+		i
+			display: none
+
+	.form-content
+		p
+			font-size: 15px
+		.checkboxes
+			label
+				font-size: 14px
+
 	.main-form
 		&-row
 			display: block
@@ -357,11 +456,6 @@
 				max-width: 100%!important
 				&.promo
 					max-width: 268px!important
-
-
-
-
-
 
 	
 	/*Disable Animation on Mobile Devices*/
@@ -478,6 +572,8 @@
 			font-size: 13px
 
 @media only screen and (max-width : 351px)
+	.tabs-controls-item
+		font-size: 10.5px!important
 	.main-form
 		.topline
 			label

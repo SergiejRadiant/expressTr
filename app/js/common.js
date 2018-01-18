@@ -122,8 +122,7 @@ $(function() {
 
   /** Calendar **/
   var datepickers = [];
-  $(".datepicker").datepicker( $.datepicker.regional["ru"] );
-
+  $(".datepicker").datepicker( $.datepicker.regional["ru"] )
   /** Calendar **/
 
 
@@ -295,17 +294,6 @@ $(function() {
     removalDelay: 300
   });
 
-  var st = $(this).scrollTop();
-
-  $(".counters-bg").css({ transform: "translate(0%, " + st / 30 + "%)" });
- 
-  $(window).scroll(function(){
-    st = $(this).scrollTop();
-   
-    $(".counters-bg").css({
-      transform: "translate(0%, " + st / 30 + "%)"
-    });
-  });
-
+  
 });
 
