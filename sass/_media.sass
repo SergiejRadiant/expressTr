@@ -9,25 +9,22 @@
 			.logo
 				width: 116px
 				height: 44px
-			li
-				> a
-					font-size: 13px!important
+			.navbar
+				position: relative
+				top: -2px
+			.menu
+				a
+					font-size: 13px
 				.lang-icon
 					width: 22px
 		&.main-header
 			.header-bottom-line
 				margin-top: 115px
 
-	.form-content
-		.check-auto
-			padding-top: 50px
-			&-item
-				margin-bottom: 40px
-
 	.check-auto
 		&-item
 			max-width: 390px
-			margin: 0 38px 83px
+			margin: 0 38px
 			&-topline
 				padding: 11px 175px 8px 15px
 			h2
@@ -153,18 +150,29 @@
 @media only screen and (max-width : 991px)
 	header
 		.topline
-			ul
-				display: none
+			.logo
+				width: 71px
+				height: 27px
+			.switch-lang-btn
+				.lang-icon
+					width: 18px
+					height: 11px
+				.dropdown-icon
+					width: 7.38px
+			.menu
+				a
+					font-size: 12px
+				
 		&.main-header
 				.header-bottom-line
 					margin-top: 0
 
-	.tabs-controls-item:nth-child(1),
+	.tabs-controls-item:nth-child(1)
+		margin-left: 0!important
+		margin-right: 1.5px!important
 	.tabs-controls-item:nth-child(2),
 	.tabs-controls-item:nth-child(3)
 		margin-left: 1.5px!important
-		margin-right: 1.5px!important
-	.tabs-controls-item.reviev-form-tab
 		margin-right: 1.5px!important
 	.form-header
 		flex-wrap: wrap
@@ -177,11 +185,13 @@
 				max-width: 321px!important
 			&.passengers
 				max-width: 69px!important
+	
 	.form-content
 		.check-auto
-			padding-top: 37px
-			&-item:last-child
-				margin-bottom: 47px!important
+			padding-top: 48px
+			padding-bottom: 48px
+			.btn-wrap
+				bottom: -22px!important
 
 	.how-we-work-item
 		max-width: 224px
@@ -198,6 +208,40 @@
 				margin-bottom: 8px
 		textarea
 			height: 130px!important
+
+	.check-auto
+		justify-content: space-between
+		padding: 55px 1.5px 77px
+		&-item
+			margin-right: 0
+			margin-left: 0
+			max-width: 316px
+			&-topline
+				padding: 11px 145px 8px 15px
+			h2
+				font-size: 17px
+				margin: 0 0 7px
+			li
+				font: 13px RobotoLight, sans-serif!important
+				line-height: 1
+				padding: 0
+				margin: 0 5px 0 0!important
+				float: left
+				i
+					font-size: 13px!important
+					color: $light-green
+					margin-right: 4px!important
+			&-price
+				padding: 0 14px
+				span
+					font-size: 18px
+			.img-wrap
+				height: 164px
+			.btn-wrap
+				bottom: -30px
+			.button
+				font-size: 13px
+				padding: 16px 29px
 
 	.advantages-item
 		max-width: 179px
@@ -320,6 +364,10 @@
 				padding-right: 10px
 				&:last-child
 					padding-right: 0
+		.check-auto
+			padding-bottom: 55px
+		.check-auto-item:first-child
+			margin-bottom: 58px
 
 	.destinations-inner-slider
 		height: 300px
@@ -353,6 +401,12 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	header
+		.topline
+			.menu
+				display: none
+			#menu-toggle
+				display: inline-block
 	.tabs-controls
 		max-width: 660px
 		margin-left: auto!important
@@ -405,10 +459,17 @@
 			line-height: 105px
 			margin: 0 74px 0
 
-	.main-form
-		.check-auto-item
-			margin-right: auto
-			margin-left: auto
+	.form-content
+		.check-auto
+			padding: 44px 0!important
+
+	.check-auto
+		flex-flow: column
+	.check-auto-item
+		margin-right: auto!important
+		margin-left: auto!important
+		&:first-child
+			margin-bottom: 66px
 
 	.footer-item:nth-child(2)
 		ul
@@ -433,10 +494,22 @@
 
 
 @media only screen and (max-width : 619px)
+	.tabs-controls
+		flex-wrap: wrap
 	.tabs-controls-item
+		min-width: 34%	
 		font-size: 11.5px!important
 		i
 			display: none
+		
+		&:nth-child(1),
+		&:nth-child(3)
+			margin-left: 0!important
+			margin-right: 3px!important
+		&:nth-child(2),
+		&:nth-child(4)
+			margin-left: 0!important
+			margin-right: 0!important
 
 	.form-content
 		p
@@ -482,33 +555,6 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	.check-auto
-		&-item
-			margin-right: 0
-			margin-left: 0
-			max-width: 316px
-			&-topline
-				padding: 11px 145px 8px 15px
-			h2
-				font-size: 17px
-				margin: 0 0 7px
-			li
-				font: 13px RobotoLight, sans-serif!important
-				line-height: 1
-				padding: 0
-				margin: 0 5px 0 0!important
-				float: left
-				i
-					font-size: 13px!important
-					color: $light-green
-					margin-right: 4px!important
-			&-price
-				padding: 0 14px
-				span
-					font-size: 18px
-			.img-wrap
-				height: 164px
-
 	.main-form
 		.topline
 			label
@@ -523,8 +569,10 @@
 					left: 0
 					right: 0
 					top: auto!important
-					bottom: -5px
+					bottom: -3px
 					margin: 0 auto
+				input[type=radio]:checked + label:after
+					transform: scale(8)!important
 
 	.text-block
 		padding: 30px 24px
@@ -582,7 +630,7 @@
 				max-width: 47%
 		.check-auto-item
 			&-topline
-				padding: 11px 145px 5px 15px
+				padding: 11px 120px 5px 15px
 			h2
 				font-size: 12px
 			&-price
@@ -590,8 +638,6 @@
 					font-size: 16px
 			.img-wrap
 				height: 134px
-				input[type=radio]:checked + label:after
-					transform: scale(8)
 
 
 /* Custom, iPhone Retina */

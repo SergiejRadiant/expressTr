@@ -294,6 +294,8 @@ $(function() {
     removalDelay: 300
   });
 
-  
+  $('#menu-toggle').click(function(){
+    $(this).toggleClass('open');
+  });
 });
 

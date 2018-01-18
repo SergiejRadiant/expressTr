@@ -36,7 +36,6 @@ gulp.task('scripts', function() {
         "./app/libs/cycle2/jquery.cycle2.min.js",
         "./app/libs/cycle2/jquery.cycle2.carousel.min.js",
         "./app/libs/magnific/jquery.magnific-popup.min.js",
-        "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
       ])
       .pipe(concat("libs.js"))
       // .pipe(uglify()) //Minify libs.js
