@@ -13,8 +13,10 @@
 				position: relative
 				top: -2px
 			.menu
-				a
-					font-size: 13px
+				ul
+					li
+						a
+							font-size: 14px
 				.lang-icon
 					width: 22px
 		&.main-header
@@ -160,8 +162,10 @@
 				.dropdown-icon
 					width: 7.38px
 			.menu
-				a
-					font-size: 12px
+				ul
+					li
+						a
+							font-size: 12px
 				
 		&.main-header
 				.header-bottom-line
@@ -403,9 +407,16 @@
 @media only screen and (max-width : 768px)
 	header
 		.topline
+			.switch-lang-btn
+				.dropdown-content
+					top: 40px
+					left: -60px
+					&:before
+						left: auto
+						right: 32px
 			.menu
 				display: none
-			#menu-toggle
+			.toggle-btn
 				display: inline-block
 	.tabs-controls
 		max-width: 660px
@@ -638,8 +649,11 @@
 					font-size: 16px
 			.img-wrap
 				height: 134px
-
-
+	.footer
+		.contacts
+			.contacts-cell
+				&.light
+					padding-right: 5px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/

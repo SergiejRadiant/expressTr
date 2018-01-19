@@ -4,7 +4,7 @@ $(function() {
     event.preventDefault();
   });
 
-  $("form").submit(() => false);
+  $("form").submit(function(){ return false});
 
   /***** dropdowns ****/
 
@@ -54,21 +54,37 @@ $(function() {
   var tab_controls = $(tab_wrapper).find(".tabs-controls-item");
   var tab_items = $(tab_wrapper).find(".tabs-item");
   var is_tabs_open = false;
+  var marginTopHeader = $(".header-bottom-line").css("margin-top");
+  
+
+  /**** scrollTo *****/
+  function scrollTo(_element){
+    if($(window).width() < 1201)
+      $('html, body').animate({
+        scrollTop: $(_element).offset().top - parseInt($(".header-bottom-line").css("margin-top"))
+      }, 1000);
+  }
+  /**** scrollTo *****/
+
 
   $(tab_items).not(":first").hide();
 
   $(tab_controls).click(function() {
 
+
+
+
     var current_index = $(this).index();
     var current_item;
-    console.log(current_index);
+
     if(current_index > 1){
 
       current_item = $(tab_items).eq(current_index - 1);
-      
+      scrollTo("#header-bottom-line");
     }else{
       
       current_item = $(tab_items).eq(0);
+      scrollTo("#header");
 
       if(current_index == 1)
       {
@@ -77,7 +93,7 @@ $(function() {
       else
         $(current_item).find("input[name='endpoint']").removeAttr("disabled");
     }
-    console.log(current_item);
+
     var form_content = $(current_item).find(".form-content");
     
 
@@ -105,7 +121,7 @@ $(function() {
       is_tabs_open = true;
     }else{
 
-      $(".header-bottom-line").animate({marginTop:'135px'}, 1000);
+      $(".header-bottom-line").animate({marginTop: $(window).width() >= 993 ? marginTopHeader : '0px'}, 1000);
       $("#check-auto").fadeIn(1000);
       is_tabs_open = false;
     }
@@ -119,11 +135,6 @@ $(function() {
     input = new google.maps.places.Autocomplete(input);
   }
   /** Google API **/
-
-  /** Calendar **/
-  var datepickers = [];
-  $(".datepicker").datepicker( $.datepicker.regional["ru"] )
-  /** Calendar **/
 
 
   /**** passengers-counter  ****/
@@ -177,9 +188,11 @@ $(function() {
   /**** order-form ******/
 
   var order_form = $("#order-form"),
+      alert_window = $(order_form).find(".alert-warning"),
       order_form_content = $(order_form).find(".form-content"),
-      input_from = $(order_form).find("input[name=from]"),
-      input_endpoint = $(order_form).find("input[name=endpoint]");
+      input_origin = $(order_form).find("input[name=origin]"),
+      input_destination = $(order_form).find("input[name=destination]"),
+      output_price = $(order_form).find(".output");
 
 
       function orderFormToggle(_form_content){
@@ -200,10 +213,38 @@ $(function() {
         }
       }
 
+      function getPriceForDestination(){
+        var origin = $.trim($(input_origin).val()),
+        destination = $.trim($(input_destination).val());
 
-      $(input_from).blur(function(){
+        
 
-         orderFormToggle(order_form_content);
+        if(origin.length > 0 && destination.length > 0){
+
+          orderFormToggle(order_form_content);
+          scrollTo("#header-bottom-line");
+
+          console.log("origin = " + origin);
+          console.log("destination = " + destination);
+
+          var directionsService = new google.maps.DirectionsService;
+
+          calculatePrice(directionsService, 
+           origin, 
+           destination,
+           69,
+           40,
+           alert_window,
+           output_price);
+        }
+      }
+
+      $("input[name=origin], input[name=destination]").keyup(function(){
+        $(alert_window).fadeOut(200).empty();
+      });
+      $("input[name=origin], input[name=destination]").blur(function(){
+
+          setTimeout(getPriceForDestination, 200)
 
       });
 
@@ -294,8 +335,104 @@ $(function() {
     removalDelay: 300
   });
 
-  $('#menu-toggle').click(function(){
-    $(this).toggleClass('open');
+
+  /*** Mobile menu ***/
+
+  var clonedMenu = $("header .menu ul").clone();
+  $("#mobile-menu").append(clonedMenu);
+
+  //Option of mobile-menu
+  $("#mobile-menu").mmenu({
+    extensions:['widescreen','theme-white','effect-menu-slide','pagedim-black'],
+    navbar:{
+      title: "Меню"
+    }
   });
+  
+  //Hamburger click handler
+  var mmApi = $("#mobile-menu").data( "mmenu" );
+  
+  mmApi.bind("closed",function(){
+    $(".sandwich").removeClass("active");
+  });
+
+  $(".toggle-btn").click(function(){
+
+    mmApi.open();
+    $(".sandwich").addClass("active");
+
+  });
+
+  /*** Mobile menu ***/
+
+   /** Calendar **/
+  var datepickers = [];
+  $(".datepicker").datepicker( $.datepicker.regional["ru"] )
+  /** Calendar **/
+
+  /**** Ajax Google Maps ****/
+  function calculatePrice(_directionsService, _origin, _destination, _pricePer, _fixPrice, _alert, _output) {
+
+    if(true){
+
+      _directionsService.route({
+        origin: _origin,
+        destination: _destination,
+        travelMode: 'DRIVING',
+        unitSystem: google.maps.UnitSystem.METRIC
+      }, function(response, status) {
+
+
+          
+          switch(status){
+            case 'OK': {
+              var directionsRoute = response.routes.shift();
+              var directionsLeg = directionsRoute.legs.shift();
+              var distance = Math.ceil(directionsLeg.distance.value / 1000);
+
+              var res = distance > 40 ? distance * _pricePer : 50 * _fixPrice;
+              console.log(distance);
+              $(_output).text(res).parent().addClass("active");
+              $(_alert).fadeOut(200).empty();
+
+              break;
+            }
+            case 'ZERO_RESULTS':{
+              $(_alert).empty();
+              $(_alert).append(`<p>Вы уверенны, что указали направления правильно?
+               Не получается построить маршрут, воспользуйтесь обрытным звонком для уточнения информации:</p>
+               <a href='#popup-form' class='button small popup-form-btn'>Заказать звонок</a>`).fadeIn(200);
+              break;
+            }
+            case 'NOT_FOUND':{
+              $(_alert).empty();
+              $(_alert).append(`<p>Вы уверены, что указали правильно направление?</p>`).fadeIn(200);
+              break;
+            }
+            default: {
+              $(_alert).empty();
+              $(_alert).append(`<p>Одно или несколько, указанных вами мест не существует!</p>`).fadeIn(200);
+              break;
+            }
+          }
+
+          $(".popup-form-btn").magnificPopup({
+            type: "inline",
+            fixedContentPos: true,
+            mainClass: "mfp-fade",
+            removalDelay: 300
+          });
+
+      });
+
+    }else{
+
+
+
+    }
+
+  }
+  /**** Ajax Google Maps ****/
+
 });
 

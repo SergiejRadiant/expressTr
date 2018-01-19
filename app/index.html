@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 
-	<title>Заголовок</title>
+	<title>Главная</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +44,7 @@
 <body>
 
 	<!-- header -->
-	<header class="main-header">
+	<header class="main-header" id="header">
 
 		<div class="topline">
 			<div class="container">
@@ -78,34 +78,31 @@
 
 						</div>
 
-						<a id="menu-toggle" href="#">
-							Меню 
-							<div id="hamburger">
-								<span></span>
-								<span></span>
-								<span></span>
-							</div>
-							<div id="cross">
-								<span></span>
-								<span></span>
-								<span></span>
-							</div>
-						</a>
+						<!--sandwich-->
+						<button class="toggle-btn">
+
+							<span class="sandwich">
+
+								<span class="sw-topper"></span>
+								<span class="sw-bottom"></span>
+								<span class="sw-footer"></span>
+
+							</span>
+
+						</button>
+						<!--sandwich-->
 
 						<nav class="menu">
-
-								<a href="index.html" class="active">Главная</a>
-
-								<a href="destinations.html">Популярные направления</a>
-
-								<a href="about-us.html">О нас</a>
-
-								<a href="reviews.html">Отзывы</a>
-
-								<a href="faqs.html">FAQs</a>
-
-								<a href="contacts.html">Контакты</a>
-
+							
+							<ul>
+								<li><a href="index.html" class="active">Главная</a></li>
+								<li><a href="destinations.html">Популярные направления</a></li>
+								<li><a href="about-us.html">О нас</a></li>
+								<li><a href="reviews.html">Отзывы</a></li>
+								<li><a href="faqs.html">FAQs</a></li>
+								<li><a href="contacts.html">Контакты</a></li>
+							</ul>
+		
 						</nav>
 
 					</div>
@@ -121,7 +118,7 @@
 			</div>
 		</div>
 		
-		<div class="header-bottom-line">
+		<div class="header-bottom-line" id="header-bottom-line">
 			<div class="container">
 				
 				<!-- tabs-container -->
@@ -151,12 +148,12 @@
 									
 									<label class="text">
 										<i class="icon-map-mark"></i>
-										<input type="text" name="from" class="autocomplate" placeholder="Откуда: аэропорт, вокзал...">
+										<input type="text" name="origin" required="" class="autocomplate" placeholder="Откуда: аэропорт, вокзал...">
 									</label>
 
 									<label class="text">
 										<i class="icon-map-mark"></i>
-										<input type="text" name="endpoint" class="autocomplate" placeholder="Куда: Отель, аэропорт...">
+										<input type="text" name="destination" class="autocomplate" placeholder="Куда: Отель, аэропорт...">
 									</label>
 
 									<label class="date" for="#">
@@ -210,6 +207,10 @@
 								
 								<!-- form-content -->
 								<div class="form-content">
+
+									<div class="alert alert-warning" role="alert">
+
+									</div>
 									
 									<div class="check-auto">
 
@@ -224,7 +225,7 @@
 												</ul>
 
 												<div class="check-auto-item-price">
-													<span>от 23 000 &euro;</span>
+													<span>от <span class="output">50</span> &euro;</span>
 												</div>
 
 											</div>
@@ -252,7 +253,7 @@
 												</ul>
 
 												<div class="check-auto-item-price">
-													<span>от 23 000 &euro;</span>
+													<span>от <span class="output">50</span> &euro;</span>
 												</div>
 
 											</div>
@@ -398,12 +399,12 @@
 						</div>
 						<!-- tabs-item-->
 
+					</div>
+					<!-- tabs-content -->
+
 				</div>
-				<!-- tabs-content -->
-
+				<!-- tabs-container -->
 			</div>
-			<!-- tabs-container -->
-
 		</div>
 	</header>
 	<!-- header -->
@@ -932,6 +933,9 @@
 	</footer>
 
 	<div class="hidden">
+		
+		<nav id="mobile-menu"></nav>
+
 		<form id="popup-form" action="#" class="popup">
 			<h4>Форма обратной связи</h4>
 		
@@ -968,7 +972,7 @@
 		<![endif]-->
 
 	<!-- Load Scripts Start -->
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6PcDZP9jOv5-AWSnJyxD-NKspkPrfk&libraries=places"></script>
+	<script async defer  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcG6PcDZP9jOv5-AWSnJyxD-NKspkPrfk&libraries=places"></script>
 	<script>
 		var scr = {
 			"scripts": [
