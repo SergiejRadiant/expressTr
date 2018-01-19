@@ -279,8 +279,6 @@ textarea
 	&:focus
 		outline: 0
 
-
-
 .sandwich 
 	display: block
 	width: $w
@@ -321,11 +319,11 @@ textarea
 	.sw-topper
  		top: 7px
  		transform: rotate(-45deg)
- 		background: $light-green
+ 		background: $light-green-lighten
 	.sw-bottom
  		top: 5px
  		transform: rotate(45deg)
- 		background: $light-green
+ 		background: $light-green-lighten
 	.sw-footer
  		opacity: 0
  		top: 0
@@ -484,6 +482,51 @@ body
 				background-color: #8e969a
 
 
+.mm-navbar
+	background-color: $light-green
+	border-bottom: 0!important
+	padding: 0 25px!important
+
+.mm-menu .mm-navbar a, 
+.mm-menu .mm-navbar>*, 
+.mm-menu em.mm-counter
+	text-align: left!important
+	color: rgba(255,255,255,.8)!important
+
+.mm-listview>li:after
+	border-color: #E5E5E5!important
+	left: 0!important
+
+.mm-listview>li a
+	padding-left: 25px!important
+	&.active
+		background-color: rgba(0,0,0,.12)
+		&:hover
+			background-color: rgba(0,0,0,.12)
+	&:hover
+		background-color: rgba(0,0,0,.04)
+.mm-listview>li:first-child
+	a
+		padding-left: 50px!important
+	&:before
+		content: '\e808'
+		position: absolute
+		left: 25px
+		top: 11px
+		font-family: express-transfers-iconfont
+		font-style: normal
+		font-weight: 400
+		speak: none
+		display: inline-block
+		text-decoration: inherit
+		width: 1em
+		text-align: center
+		font-variant: normal
+		text-transform: none
+		color: $light-green
+		font-size: 16px
+		line-height: 1em
+
 header
 	background: url(../img/header-bg.jpg) 50% -127px
 	&.main-header
@@ -556,7 +599,6 @@ header
 							text-decoration: none
 						&.active
 							color: #9a9d9e
-
 
 .header-text
 	text-align: center
