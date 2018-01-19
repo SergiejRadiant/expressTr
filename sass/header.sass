@@ -256,8 +256,8 @@ textarea
 	resize: none
 
 .toggle-btn
-	width: 40px
-	height: 22px
+	width: 24px
+	height: 14px
 	margin-left: auto
 	background-color: transparent
 	z-index: 5
@@ -276,6 +276,8 @@ textarea
 		-moz-transform: scale(0.7);
 		-webkit-transform: scasle(0.7);
 		transform: scale(0.7);
+	&:focus
+		outline: 0
 
 
 
@@ -317,11 +319,11 @@ textarea
 	transition-delay: 0.1s
 .sandwich.active 
 	.sw-topper
- 		top: 13px
+ 		top: 7px
  		transform: rotate(-45deg)
  		background: $light-green
 	.sw-bottom
- 		top: 7px
+ 		top: 5px
  		transform: rotate(45deg)
  		background: $light-green
 	.sw-footer
@@ -493,7 +495,7 @@ header
 		height: 52px
 
 	.topline
-		padding: 20px 0
+		padding: 14px 0
 		background-color: $dark-blue-cover
 		&-wrap
 			display: flex
@@ -503,6 +505,8 @@ header
 		.navbar
 			display: flex
 			align-items: center
+			position: relative
+			top: -2px
 		
 		.switch-lang-btn
 			position: relative
