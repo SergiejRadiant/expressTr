@@ -44,7 +44,7 @@ $(function() {
     });
   }
 
-  DropDown(".dropdown", ".dropdown-content", 200);
+  DropDown(".dropdown", ".dropdown-content", 100);
   
 
   /***** dropdowns ****/
