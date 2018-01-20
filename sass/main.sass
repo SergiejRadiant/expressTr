@@ -171,6 +171,13 @@ body textarea:required:valid
 		border-radius: 21px
 		padding: 12px 22px 12px
 		margin: 4px
+		transition-duration: .2s
+		&:before
+			width: 0
+			height: 0
+		&:hover
+			background: lighten($light-green, 8%)
+			transform: scale(1)
 
 
 .destinations-item
