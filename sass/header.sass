@@ -430,6 +430,7 @@ body
 	margin-top: 5px
 	border-radius: 0
 	padding: 0
+	z-index: 100!important
 	box-shadow: 1px 1px 3px rgba(0,0,0,.34)
 	&:before
 		content: ''
@@ -451,7 +452,52 @@ body
 		background-color: #8e969a
 		span
 			font: 15px Roboto, sans-serif
-			line-height: 30px
+	&-title
+		margin: 0 4em!important
+		line-height: 30px!important
+	&-next,
+	&-prev
+		top: 3px!important
+		left: 46px!important
+		cursor: pointer
+		&:before
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			margin: auto
+			color: #dddada
+			font-size: 9px
+			font-family: express-transfers-iconfont
+			font-style: normal
+			font-weight: 400
+			speak: none
+			display: inline-block
+			text-decoration: inherit
+			width: 1em
+			text-align: center
+			font-variant: normal
+			text-transform: none
+			height: 1em
+			line-height: 1em
+		&:hover
+			text-decoration: none
+		&:visited
+			text-decoration: none
+	.ui-state-hover
+		background-color: transparent
+		border: 0
+		color: $light-green
+
+	&-prev
+		&:before
+			content: '\e800'
+	&-next
+		left: auto!important
+		right: 46px!important
+		&:before
+			content: '\e801'
 	table
 		margin: 0
 		thead
@@ -509,7 +555,7 @@ body
 	a
 		padding-left: 50px!important
 	&:before
-		content: '\e808'
+		content: '\e809'
 		position: absolute
 		left: 25px
 		top: 11px
@@ -633,8 +679,7 @@ header
 			background-color: rgba(255,255,255,.37)
 			cursor: pointer
 			&:hover
-				color: $dark-blue
-				background-color: #fff
+				background-color: rgba(255,255,255,.53)
 			&.active
 				color: $dark-blue
 				background-color: #fff				
@@ -648,8 +693,7 @@ header
 				&:before
 					margin-left: 0
 			&:hover
-				color: $dark-blue
-				background-color: $light-green-lighten
+				background-color: rgba(104,242,221,.57);
 			&.active
 				color: $dark-blue
 				background-color: $light-green-lighten

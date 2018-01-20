@@ -45,7 +45,7 @@ body textarea:required:valid
 	i	
 		color: $light-green
 		font-size: 39px
-		transition: color .7s ease
+		transition: all .4s ease
 		&:before
 			display: block
 			margin: 0
@@ -587,12 +587,11 @@ body textarea:required:valid
 			margin-right: 15px
 			background-color: #e5e5e5
 			cursor: pointer
-			transition: all .2s ease
+			transition: all .3s ease
 			&:last-child
 				margin-right: 0
 			&:hover
-				color: #fff
-				background-color: $light-green
+				background-color: lighten($light-green-trans, 15%)
 		input[type="radio"]
 			display: none
 		input[type="radio"]:checked + label
@@ -993,7 +992,7 @@ footer
 			margin-bottom: 9px
 			color: inherit
 			font: inherit
-			transition: color .4s ease
+			transition: color .3s ease
 			&:hover
 				color: lighten($light-green, 3%)
 				text-decoration: none
