@@ -434,5 +434,19 @@ $(function() {
   }
   /**** Ajax Google Maps ****/
 
+
+  /**** Pay Methods radio  ****/
+  $("[name = pay-method-card]").on('change', function() {
+    var $this = $(this),
+        src = $this.attr("data-img"),
+        alt = $this.attr("data-alt"),
+        dropdown = $this.closest(".dropdown"),
+        commonImg = dropdown.find(".pay-method-label img"),
+        commonSpan = dropdown.find(".pay-method-label span");
+
+    commonImg.attr("src", src);
+    commonImg.attr("alt", alt);
+    commonSpan.text(alt);
+  });
 });
 
