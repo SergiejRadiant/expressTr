@@ -349,6 +349,7 @@ body
 	position: absolute
 	display: none
 	top: 47px
+	min-width: 108px
 	border-radius: 5px
 	margin-bottom: 0
 	color: #716e6e
@@ -365,13 +366,16 @@ body
 		display: block
 		width: 0
 		height: 0
+	input
+		display: none
 	a, label
 		display: block
-		position: relative
+		position: relative!important
 		color: #716e6e!important
 		font-size: 13px!important
 		line-height: 21px!important
 		padding: 5px 18px 5px 56px
+		overflow: hidden
 		transition: background-color .2s ease
 		img
 			width: 33px
@@ -384,10 +388,10 @@ body
 			float: left
 		&:hover
 			background-color: #ededed
-		&:first-child
+		&:first-of-type
 			border-top-left-radius:  4px
 			border-top-right-radius: 4px
-		&:last-child
+		&:last-of-type
 			border-bottom-left-radius:  4px
 			border-bottom-right-radius: 4px
 		&:before
