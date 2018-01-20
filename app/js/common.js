@@ -446,6 +446,7 @@ $(function() {
 
     commonImg.attr("src", src);
     commonImg.attr("alt", alt);
+    commonImg.addClass("active");
     commonSpan.text(alt);
   });
 });
