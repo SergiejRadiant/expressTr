@@ -436,6 +436,17 @@ $(function() {
 
 
   /**** Pay Methods radio  ****/
+ 
+  $("[name = pay-method]").on('change', function() {
+    var $this = $(this),
+        pm = $this.closest(".pay-method"),
+        img = pm.find(".dropdown .pay-method-label img"),
+        span = pm.find(".dropdown .pay-method-label span");
+
+    img.removeClass("active");
+    span.text("");
+  });
+ 
   $("[name = pay-method-card]").on('change', function() {
     var $this = $(this),
         src = $this.attr("data-img"),
