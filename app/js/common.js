@@ -461,19 +461,6 @@ $(function() {
   });
    /**** Pay Methods radio  ****/ 
 
-   /**** Phone Codes ****/
-   $("[name = ph-code").on('change', function() {
-    var $this = $(this),
-        src = $this.attr("data-img"),
-        alt = $this.attr("data-alt"),
-        val = $this.attr("data-val"),
-        main = $this.closest(".phone"),
-        _img = main.find(".img-wrap >img"),
-        _input = main.find(">label input");
-        
-    _img.attr("src", src);
-    _img.attr("alt", alt);
-    _input.attr("value", val)
-   });
+   
 });
 
