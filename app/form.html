@@ -569,16 +569,55 @@
 
 						<div class="main-form-cell">
 
-							<div class="passengers">
+							<div class="passengers dropdown">
+
+								<div class="stub"></div>
+
 								<i class="icon-man"></i>
 								Взрослые:
-								<span id="padults">3</span> Дети:
-								<span id="pchildren">3</span>
+								<div class="input-wrap">
+									<input type="text" name="Adults" placeholder="3" required="">
+								</div>
+								Дети:
+								<div class="input-wrap">
+									<input type="text" name="Children" placeholder="3" required="">
+								</div>
+								
+								<!-- dropdown-content -->
+								<div class="dropdown-content">
+
+									<input type="hidden" name="Children" value="0">
+									<input type="hidden" name="Adults" value="0">
+
+									<div class="count-passengers">
+										<h6>Взрослые</h6>
+										<div class="counter" data-input="Adults">
+											<i class="icon-man"></i>
+											<input type="text" disabled="" name="Adults" value="0">
+											<div class="inc btn">+</div>
+											<div class="dec btn">-</div>
+										</div>
+									</div>
+
+									<div class="count-passengers">
+										<h6> Дети
+											<span>
+												< 12 лет </span>
+											</h6>
+											<div class="counter" data-input="Children">
+												<i class="icon-man"></i>
+												<input type="text" disabled="" name="Children" value="0">
+												<div class="inc btn">+</div>
+												<div class="dec btn">-</div>
+											</div>
+										</div>
+
+									</div>
+									<!-- dropdown-content -->
+
 							</div>
 
-							<div class="dropdown">
-
-							</div>
+							
 
 						</div>
 

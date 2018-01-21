@@ -344,6 +344,54 @@ body
 .dropdown
 	span
 		cursor: pointer
+	&.passengers
+		.dropdown-content
+			min-width: 0
+			padding: 10px 30px 14px 18px
+			text-align: left
+			h6
+				font-size: 15px
+				margin: 6px 0
+				&:first-of-type
+					margin-top: 0
+				span
+					color: #d8dbdb
+					font: 13px Roboto, sans-serif
+					margin-left: 5px
+			&:before
+				left: auto
+				right: 24px
+			i
+				font-size: 13px
+				position: relative!important
+				left: auto!important
+				right: auto!important
+				bottom: auto!important
+				top: auto!important
+			h5
+				margin: 0
+				padding: 0
+			.counter
+				display: flex
+				align-items: center
+				input
+					width: 30px
+					height: 25px
+					position: relative
+					text-align: center
+					padding: 0
+					margin: 0 2px
+					z-index: 0
+				.btn
+					background-color: #c0f6ea//!!! цвет без переменной
+					width: 34px
+					height: 26px
+					justify-content: center
+					align-items: center
+					display: flex
+					border-radius: 2px
+					cursor: pointer
+					margin-left: 5px
 
 .dropdown-content
 	position: absolute
@@ -757,51 +805,7 @@ header
 				height: 100%
 				cursor: pointer
 			.dropdown-content
-				min-width: 0
-				padding: 10px 30px 14px 18px
 				right: 0
-				text-align: left
-				h6
-					font-size: 15px
-					margin: 6px 0
-					&:first-of-type
-						margin-top: 0
-					span
-						color: #d8dbdb
-						font: 13px Roboto, sans-serif
-						margin-left: 5px
-				&:before
-					left: auto
-					right: 24px
-				i
-					font-size: 13px
-					position: relative
-					left: auto
-					right: auto
-					bottom: auto
-					top: auto
-				h5
-					margin: 0
-					padding: 0
-				.counter
-					display: flex
-					align-items: center
-					input
-						width: 30px
-						height: 25px
-						position: relative
-						text-align: center
-						padding: 0
-						margin: 0 2px
-						z-index: 0
-					.btn
-						background-color: #c0f6ea//!!! цвет без переменной
-						width: 34px
-						height: 26px
-						text-align: center
-						border-radius: 2px
-						cursor: pointer
-						margin-left: 5px
 
 		.form-content
 			display: none

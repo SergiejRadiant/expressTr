@@ -182,7 +182,7 @@ $(function() {
     passengersCounter(type, counter, "dec");
 
   });
-  
+
   /**** passengers-counter  ****/
 
   /**** order-form ******/
@@ -436,20 +436,23 @@ $(function() {
 
 
   /**** Pay Methods radio  ****/ 
-  $("[name = pay-method]").on('change', function() {
+  $("input[name=pay-method]").on('change', function() {
     var $this = $(this),
         pm = $this.closest(".pay-method"),
         img = pm.find(".dropdown .pay-method-label img"),
-        span = pm.find(".dropdown .pay-method-label span");
+        span = pm.find(".dropdown .pay-method-label span"),
+        cards = pm.find(".dropdown input[name=pay-method-card]");
 
+
+    cards.prop("checked", false);
     img.removeClass("active");
     span.text("");
   });
  
-  $("[name = pay-method-card]").on('change', function() {
+  $("input[name=pay-method-card]").on('change', function() {
     var $this = $(this),
-        src = $this.attr("data-img"),
-        alt = $this.attr("data-alt"),
+        src = $this.data("img"),
+        alt = $this.data("alt"),
         dropdown = $this.closest(".dropdown"),
         commonImg = dropdown.find(".pay-method-label img"),
         commonSpan = dropdown.find(".pay-method-label span");
