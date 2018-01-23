@@ -776,8 +776,10 @@ body textarea:required:valid
 			position: relative
 		.pay-method-label
 			position: relative
-			display: inline-block
-			line-height: 27px
+			display: table
+			font-size: 14px
+			vertical-align: middle
+			line-height: 26px
 			border-radius: 4px
 			padding: 12px 20px 11px 45px
 			margin-bottom: 6px
@@ -798,6 +800,9 @@ body textarea:required:valid
 				background-color: #f0f0f0
 				.pay-method-radio
 					border: 5px solid #bcbcbc
+			.img-wrap
+				display: table-cell
+				vertical-align: middle
 			img
 				width: 0
 				height: 27px
@@ -807,7 +812,7 @@ body textarea:required:valid
 				transition: all .6s ease
 				&.active
 					width: 43px
-					margin-right: 8px
+					margin-right: 13px
 					opacity: 1
 
 					
