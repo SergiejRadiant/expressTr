@@ -439,13 +439,13 @@ $(function() {
   $("input[name=pay-method]").on('change', function() {
     var $this = $(this),
         pm = $this.closest(".pay-method"),
-        img = pm.find(".dropdown .pay-method-label img"),
+        common = pm.find(".dropdown .pay-method-label"),
         span = pm.find(".dropdown .pay-method-label span"),
         cards = pm.find(".dropdown input[name=pay-method-card]");
 
 
     cards.prop("checked", false);
-    img.removeClass("active");
+    common.removeClass("active");
     span.text("");
   });
  
@@ -454,12 +454,13 @@ $(function() {
         src = $this.data("img"),
         alt = $this.data("alt"),
         dropdown = $this.closest(".dropdown"),
+        common = dropdown.find(".pay-method-label"),
         commonImg = dropdown.find(".pay-method-label img"),
         commonSpan = dropdown.find(".pay-method-label span");
 
     commonImg.attr("src", src);
     commonImg.attr("alt", alt);
-    commonImg.addClass("active");
+    common.addClass("active");
     commonSpan.text(alt);
   });
    /**** Pay Methods radio  ****/ 
