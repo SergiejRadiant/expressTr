@@ -68,6 +68,13 @@
 				input[type="radio"]:checked + label:after
 					transform: scale(9)
 					top: 29px
+		.pay-method
+			.pay-method-label
+				font-size: 12px
+				.pay-method-radio
+					width: 15px
+					height: 15px
+
 
 	.how-we-work-item
 		max-width: 184px
@@ -119,23 +126,6 @@
 		.button
 			margin: 3px 0 0 0
 
-	.contacts-form
-		margin-top: 40px
-		.checkbox-desk
-			display: none!important
-		.contacts-lables-wrap
-			flex-flow: column
-			label
-				margin: 0 auto 14px
-				max-width: 318px
-				&:nth-child(3)
-					margin-bottom: 0
-			.button
-				margin: 0 auto
-				max-width: 318px
-			.checkbox
-				display: block!important
-
 	.destinations-inner-slider
 		height: 377px
 	
@@ -151,6 +141,8 @@
 			padding-top: 89px
 			h4:first-of-type
 				margin-top: 52px
+
+	
 
 				
 
@@ -202,6 +194,8 @@
 				max-width: 69px!important
 	
 	.form-content
+		.checkboxes
+			margin-top: 15px
 		.check-auto
 			padding-top: 48px
 			padding-bottom: 48px
@@ -332,6 +326,12 @@
 
 	.text-block .partners
 		margin-bottom: 36px
+
+	.contacts-form 
+		input[type=checkbox]+label
+			margin-top: 11px
+			font-size: 14px
+			background-position: 1px 4px
 
 	.footer
 		flex-flow: column
@@ -580,7 +580,7 @@
 				&.promo
 					max-width: 268px!important
 
-	
+		
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -660,12 +660,12 @@
 	.slider-pager
 		display: none
 
+	.contacts-form 
+		input[type=checkbox]+label
+			font-size: 13px
+
 
 @media only screen and (max-width : 375px)
-	.contacts-form
-		.contacts-lables-wrap
-			label.checkbox
-				font-size: 14px
 	.popup-form
 		p
 			font-size: 13px
