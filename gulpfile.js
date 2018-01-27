@@ -33,10 +33,9 @@ gulp.task('scripts', function() {
       .src([
         "./app/libs/jquery/jquery-3.2.1.min.js",
         './app/libs/datepicker/jquery-ui.min.js',
-        "./app/libs/cycle2/jquery.cycle2.min.js",
-        "./app/libs/cycle2/jquery.cycle2.carousel.min.js",
         "./app/libs/magnific/jquery.magnific-popup.min.js",
         './app/libs/jQuery.mmenu/dist/js/jquery.mmenu.all.min.js',
+        './app/libs/slick-carousel/slick.min.js',
       ])
       .pipe(concat("libs.js"))
       // .pipe(uglify()) //Minify libs.js

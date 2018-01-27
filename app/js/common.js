@@ -270,70 +270,6 @@ $(function() {
 
 	});
 
-	$(".slider-slideshow").cycle({
-    slides: "> img",
-    timeout: 0,
-    prev: ".slider-prev",
-    next: ".slider-next"
-  });
-	
-	$(".slider-pager").cycle({
-    slides: "> div",
-		timeout: 0,
-    fx: "carousel",
-    carouselVisible: 8,
-    allowWrap: false,
-    slideActiveClass: "sp-active"
-	});
-	
-
-  var slideshows = $(".slider-element").on("cycle-next cycle-prev", function(e, opts) {
-    // advance the other slideshow
-    slideshows.not(this).cycle("goto", opts.currSlide);
-  });
-
-  $(".slider-pager .img-wrap").click(function() {
-    var index = $(".slider-pager")
-      .data("cycle.API")
-      .getSlideIndex(this);
-    slideshows.cycle("goto", index);
-  });
-
-  $(".slider-enlarge").on("click", function() {
-    var active = $(".cycle-slide-active").attr("src");
-    $(this).attr("href", active);
-  });
-
-  $(".slider-enlarge").magnificPopup({
-    type: "image",
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: "mfp-no-margins mfp-with-zoom",
-
-    image: {
-      verticalFit: true,
-      cursor: "null"
-    },
-
-    zoom: {
-      enabled: true, 
-      duration: 300, 
-      easing: "ease-in-out",
-
-      opener: function(openerElement) {
-        return openerElement.is("a")
-          ? openerElement
-          : openerElement.find("a");
-      }
-    }
-  });
-
-  $(".popup-form-btn").magnificPopup({
-    type: "inline",
-    fixedContentPos: true,
-    mainClass: "mfp-fade",
-    removalDelay: 300
-  });
 
 
   /*** Mobile menu ***/
@@ -464,6 +400,71 @@ $(function() {
     commonSpan.text(alt);
   });
    /**** Pay Methods radio  ****/ 
+
+   /*** a slider for cars ***/
+
+     $('.slick-slider-auto').slick({
+      dots: false,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      fade: true,
+      cssEase: 'linear'
+    });
+
+  /***  a slider for cars ***/ 
+
+  /*** a slider for the destination ***/
+
+    //var cloned_slider_items = $("").clone();
+
+    $('.destinations-inner-slider .slider-slideshow').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: true,
+      prevArrow: ".destinations-inner-slider .slider-prev",
+      nextArrow: ".destinations-inner-slider .slider-next",
+      fade: true,
+      asNavFor: '.destinations-inner-slider .slider-pager'
+    });
+
+    //$("").append(cloned_slider_items);
+
+    $('.destinations-inner-slider .slider-pager').slick({
+      slidesToShow: 8,
+      slidesToScroll: 1,
+      asNavFor: '.destinations-inner-slider .slider-slideshow',
+      dots: false,
+      infinite: false,
+      arrows: false,
+      centerMode: false,
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 6
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2
+          }
+        }
+      ]
+    });
+
+  /***  a slider for the destination ***/ 
 
    
 });
