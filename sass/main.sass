@@ -72,24 +72,24 @@ body textarea:required:valid
 			position: relative
 			padding: 10px 175px 10px 15px
 			border-left: 5px solid $light-green
-		h2
-			font-size: 25px
-			margin: 0 0 13px
-		ul
-			padding: 0
-			margin: 0
-			display: inline-block
-			list-style-type: none
-			li
-				font: 15px RobotoLight, sans-serif
-				line-height: 1
+			h2
+				font-size: 25px
+				margin: 0 0 13px
+			ul
 				padding: 0
-				margin: 0 10px 0 0
-				float: left
-				i
-					font-size: 14px
-					color: $light-green
-					margin-right: 7px
+				margin: 0
+				display: inline-block
+				list-style-type: none
+				li
+					font: 15px RobotoLight, sans-serif
+					line-height: 1
+					padding: 0
+					margin: 0 10px 0 0
+					float: left
+					i
+						font-size: 14px
+						color: $light-green
+						margin-right: 7px
 		&-price
 			display: flex
 			font-family: column
@@ -112,7 +112,13 @@ body textarea:required:valid
 				height: 100%
 				.slick-track
 					height: 100%
-			a
+			ul
+				width: 100%	
+				height: 100%
+				position: absolute
+				top: 0
+				left: 0
+			a, li
 				display: block
 				cursor: pointer
 				width: 100%
@@ -122,23 +128,26 @@ body textarea:required:valid
 				position: absolute
 				&:hover
 					img
-						opacity: 0.8
+						opacity: 0.6
 				.mark
 					position: absolute
-					top: 0
-					bottom: 0
-					height: 100%
-					width: 100%
-					display: flex
-					justify-content: center
-					align-items: center
-					font-size: 48px
-					line-height: 20px
-					font-family: "DroidSansBold", sans-serif
+					top: 67%
+					left: 9%
+					color: #fff
+					font-size: 16px
+					font-family: Roboto, sans-serif
+					opacity: 0.83
+					z-index: 2
+			li 
+				padding: 0
+				margin: 0
+				.mark
+					top: 18%
 			img
 				display: block
 				width: 100%
 				height: 100%
+				opacity: 0.8
 				transition: opacity .6s ease
 		.btn-wrap
 			position: absolute
