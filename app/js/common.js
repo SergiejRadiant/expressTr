@@ -423,7 +423,6 @@ $(function() {
     $('.destinations-inner-slider .slider-slideshow').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      infinite: false,
       arrows: true,
       prevArrow: ".destinations-inner-slider .slider-prev",
       nextArrow: ".destinations-inner-slider .slider-next",
@@ -433,35 +432,15 @@ $(function() {
 
     //$("").append(cloned_slider_items);
 
-    $('.destinations-inner-slider .slider-pager').slick({
-      slidesToShow: 8,
-      slidesToScroll: 1,
-      asNavFor: '.destinations-inner-slider .slider-slideshow',
+    $(".destinations-inner-slider .slider-pager").slick({
+      slidesToShow: 9,
+      slidesToScroll: 9,
+      asNavFor: ".destinations-inner-slider .slider-slideshow",
       dots: false,
-      infinite: false,
       arrows: false,
-      centerMode: false,
+      centerMode: true,
       focusOnSelect: true,
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 6
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 4
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2
-          }
-        }
-      ]
+      variableWidth: true
     });
 
   /***  a slider for the destination ***/ 

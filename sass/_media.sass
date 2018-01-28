@@ -122,7 +122,7 @@
 			margin-top: 6px
 		.social
 			width: 100%
-			margin: 20px 0 24px
+			margin-top: 61px
 		.button
 			margin: 3px 0 0 0
 
@@ -131,8 +131,8 @@
 	
 	.slider-pager
 		bottom: -33px
+		max-width: 739px
 		.img-wrap
-			display: inline-block
 			width: 97px
 			height: 71px
 	
@@ -246,10 +246,9 @@
 					font-size: 18px
 			.img-wrap
 				height: 164px
-				a, li
-					.mark
-						top: 10%
-						font-size: 15px
+				.mark
+					top: 10%
+					font-size: 15px
 			.btn-wrap
 				bottom: -30px
 			.button
@@ -403,16 +402,18 @@
 	.destinations-inner-slider
 		height: 300px
 
+	.slider-slideshow
+		a:before
+			background-size: 56px
+			opacity: 0.3
+
 	.slider-next, .slider-prev
 		width: 32px
 		height: 56px
 
-	.slider-enlarge
-		width: 56px
-		height: 56px
-
 	.slider-pager
 		bottom: -21px
+		max-width: 458px
 		.img-wrap
 			display: inline-block
 			width: 42px
@@ -534,19 +535,15 @@
 	.destinations-inner-slider
 		height: 249px
 
-	.slider-pager
-		bottom: -21px
-		.img-wrap
-			display: inline-block
-			width: 42px
-			height: 42px
-			border-radius: 50%	
-
 	.destinations-inner-content
 		.text-block
 			padding-top: 63px
 
 
+@media only screen and (max-width : 643px)
+	.slider-pager
+		max-width: 354px
+	
 @media only screen and (max-width : 619px)
 	.tabs-controls
 		flex-wrap: wrap
@@ -582,9 +579,9 @@
 			input
 				max-width: 100%!important
 				&.promo
-					max-width: 268px!important
-
-		
+					max-width: 268px
+	
+			
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -662,7 +659,7 @@
 				font-size: 26px
 
 	.slider-pager
-		display: none
+		display: none!important
 
 	.contacts-form 
 		input[type=checkbox]+label

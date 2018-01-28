@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'express-transfers-iconfont';
-  src: url('../fonts/express-transfers-iconfont/express-transfers-iconfont.eot?641795');
-  src: url('../fonts/express-transfers-iconfont/express-transfers-iconfont.eot?641795#iefix') format('embedded-opentype'),
-       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.woff2?641795') format('woff2'),
-       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.woff?641795') format('woff'),
-       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.ttf?641795') format('truetype'),
-       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.svg?641795#express-transfers-iconfont') format('svg');
+  src: url('../fonts/express-transfers-iconfont/express-transfers-iconfont.eot?62649000');
+  src: url('../fonts/express-transfers-iconfont/express-transfers-iconfont.eot?62649000#iefix') format('embedded-opentype'),
+       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.woff2?62649000') format('woff2'),
+       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.woff?62649000') format('woff'),
+       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.ttf?62649000') format('truetype'),
+       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.svg?62649000#express-transfers-iconfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'express-transfers-iconfont';
-    src: url('../font/express-transfers-iconfont.svg?641795#express-transfers-iconfont') format('svg');
+    src: url('../font/express-transfers-iconfont.svg?62649000#express-transfers-iconfont') format('svg');
   }
 }
 */
@@ -66,8 +66,8 @@
 .icon-mail:before { content: '\e808'; } /* '' */
 .icon-man:before { content: '\e809'; } /* '' */
 .icon-map-mark:before { content: '\e80a'; } /* '' */
-.icon-phone:before { content: '\e80b'; } /* '' */
-.icon-plane:before { content: '\e80c'; } /* '' */
+.icon-plane:before { content: '\e80b'; } /* '' */
+.icon-phone:before { content: '\e80c'; } /* '' */
 .icon-social-fb:before { content: '\e80d'; } /* '' */
 .icon-social-im:before { content: '\e80e'; } /* '' */
 .icon-social-inst:before { content: '\e80f'; } /* '' */
