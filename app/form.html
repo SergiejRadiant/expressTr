@@ -185,10 +185,7 @@
 	
 										<!-- dropdown-content -->
 										<div class="dropdown-content">
-	
-											<input type="hidden" name="Children" value="0">
-											<input type="hidden" name="Adults" value="0">
-	
+
 											<div class="count-passengers">
 												<h6>Взрослые</h6>
 												<div class="counter" data-input="Adults">
@@ -198,20 +195,46 @@
 													<div class="dec btn">-</div>
 												</div>
 											</div>
-	
+
 											<div class="count-passengers">
-												<h6> Дети
-													<span>
-														< 12 лет </span>
-												</h6>
-												<div class="counter" data-input="Children">
+
+												<h6> Дети <span> 0-9 кг </span> </h6>
+
+												<div class="counter" data-input="Children0_9">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="Children" value="0">
+													<input type="text" disabled="" name="Children0_9" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
+
 											</div>
-	
+
+											<div class="count-passengers">
+
+												<h6> Дети <span> 9-18 кг </span> </h6>
+
+												<div class="counter" data-input="Children9_18">
+													<i class="icon-man"></i>
+													<input type="text" disabled="" name="Children9_18" value="0">
+													<div class="inc btn">+</div>
+													<div class="dec btn">-</div>
+												</div>
+
+											</div>
+
+											<div class="count-passengers">
+
+												<h6> Дети <span> 18-36 кг </span> </h6>
+
+												<div class="counter" data-input="Children18_36">
+													<i class="icon-man"></i>
+													<input type="text" disabled="" name="Children18_36" value="0">
+													<div class="inc btn">+</div>
+													<div class="dec btn">-</div>
+												</div>
+
+											</div>
+
 										</div>
 										<!-- dropdown-content -->
 	
@@ -615,18 +638,15 @@
 								<i class="icon-man"></i>
 								Взрослые:
 								<div class="input-wrap">
-									<input type="text" name="Adults" placeholder="3" required="">
+									<input type="text" name="Display_Adults" placeholder="3" required="">
 								</div>
 								Дети:
 								<div class="input-wrap">
-									<input type="text" name="Children" placeholder="3" required="">
+									<input type="text" name="Display_Children" placeholder="3" required="">
 								</div>
 								
 								<!-- dropdown-content -->
 								<div class="dropdown-content">
-
-									<input type="hidden" name="Children" value="0">
-									<input type="hidden" name="Adults" value="0">
 
 									<div class="count-passengers">
 										<h6>Взрослые</h6>
@@ -639,20 +659,46 @@
 									</div>
 
 									<div class="count-passengers">
-										<h6> Дети
-											<span>
-												< 12 лет </span>
-											</h6>
-											<div class="counter" data-input="Children">
-												<i class="icon-man"></i>
-												<input type="text" disabled="" name="Children" value="0">
-												<div class="inc btn">+</div>
-												<div class="dec btn">-</div>
-											</div>
+
+										<h6> Дети <span> 0-9 кг </span> </h6>
+
+										<div class="counter" data-input="Children0_9">
+											<i class="icon-man"></i>
+											<input type="text" disabled="" name="Children0_9" value="0">
+											<div class="inc btn">+</div>
+											<div class="dec btn">-</div>
 										</div>
 
 									</div>
-									<!-- dropdown-content -->
+
+									<div class="count-passengers">
+
+										<h6> Дети <span> 9-18 кг </span> </h6>
+
+										<div class="counter" data-input="Children9_18">
+											<i class="icon-man"></i>
+											<input type="text" disabled="" name="Children9_18" value="0">
+											<div class="inc btn">+</div>
+											<div class="dec btn">-</div>
+										</div>
+
+									</div>
+
+									<div class="count-passengers">
+
+										<h6> Дети <span> 18-36 кг </span> </h6>
+
+										<div class="counter" data-input="Children18_36">
+											<i class="icon-man"></i>
+											<input type="text" disabled="" name="Children18_36" value="0">
+											<div class="inc btn">+</div>
+											<div class="dec btn">-</div>
+										</div>
+
+									</div>
+
+								</div>
+								<!-- dropdown-content -->
 
 							</div>
 

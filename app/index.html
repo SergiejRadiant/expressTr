@@ -174,9 +174,6 @@
 										<!-- dropdown-content -->
 										<div class="dropdown-content">
 
-											<input type="hidden" name="Children" value="0">
-											<input type="hidden" name="Adults" value="0">
-											
 											<div class="count-passengers">
 												<h6>Взрослые</h6>
 												<div class="counter" data-input="Adults">
@@ -188,13 +185,42 @@
 											</div>
 
 											<div class="count-passengers">
-													<h6> Дети <span> < 12 лет </span> </h6>
-												<div class="counter" data-input="Children">
+
+												<h6> Дети <span> 0-9 кг </span> </h6>
+
+												<div class="counter" data-input="Children0_9">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="Children" value="0">
+													<input type="text" disabled="" name="Children0_9" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
+
+											</div>
+
+											<div class="count-passengers">
+
+												<h6> Дети <span> 9-18 кг </span> </h6>
+
+												<div class="counter" data-input="Children9_18">
+													<i class="icon-man"></i>
+													<input type="text" disabled="" name="Children9_18" value="0">
+													<div class="inc btn">+</div>
+													<div class="dec btn">-</div>
+												</div>
+
+											</div>
+
+											<div class="count-passengers">
+
+												<h6> Дети <span> 18-36 кг </span> </h6>
+
+												<div class="counter" data-input="Children18_36">
+													<i class="icon-man"></i>
+													<input type="text" disabled="" name="Children18_36" value="0">
+													<div class="inc btn">+</div>
+													<div class="dec btn">-</div>
+												</div>
+
 											</div>
 
 										</div>
@@ -230,7 +256,7 @@
 												</ul>
 
 												<div class="check-auto-item-price">
-													<span>от 23 000 &euro;</span>
+													<span class="output">от 23 000 &euro;</span>
 												</div>
 
 											</div>
@@ -274,7 +300,7 @@
 												</ul>
 
 												<div class="check-auto-item-price">
-													<span>от 23 000 &euro;</span>
+													<span class="output">от 23 000 &euro;</span>
 												</div>
 
 											</div>

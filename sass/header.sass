@@ -368,6 +368,9 @@ body
 				right: auto!important
 				bottom: auto!important
 				top: auto!important
+				transition: color .5s ease
+				&.active
+					color: $light-green-lighten
 			h5
 				margin: 0
 				padding: 0
@@ -379,6 +382,10 @@ body
 					height: 25px
 					position: relative
 					text-align: center
+					display: block
+					border: none
+					background-color: transparent
+					border-radius: 0px
 					padding: 0
 					margin: 0 2px
 					z-index: 0
@@ -876,8 +883,8 @@ header
 				span
 					&.active
 						color: $light-green
-						span
-							color: $light-green
+					&.output
+						color: $light-green
 				.btn-wrap	
 					bottom: -29px
 

@@ -25,10 +25,9 @@ $(function() {
 
       if($(current_cont).css("display") != "block"){
 
-        for(var cont of $(dropdown_container)){
-          if(cont != current_cont){
-            $(cont).fadeOut(duration);
-          }
+        var drp_arr = $(dropdown_container);
+        for(var i = 0; i < drp_arr.length; i++){
+          $(drp_arr[i]).fadeOut(duration);
         }
 
         $(current_cont).fadeIn(duration);
@@ -131,8 +130,8 @@ $(function() {
   
   /** Google API **/
   var inputs = document.getElementsByClassName('autocomplate');
-  for(var input of inputs){
-    input = new google.maps.places.Autocomplete(input);
+  for(var i = 0; i < inputs.length; i++){
+    inputs[i] = new google.maps.places.Autocomplete(inputs[i]);
   }
   /** Google API **/
 
@@ -142,12 +141,36 @@ $(function() {
   function displayTotal(_counter){
     var main = $(_counter).parent().parent().parent(),
       input = $(main).find("input[name=Total]"),
-      counters = $(main).find(".counter input");
+      dsp_adults = $(main).find("input[name=Display_Adults]"),
+      dsp_children = $(main).find("input[name=Display_Children]"),
+      counters = $(main).find(".count-passengers input");
 
-    var adults = parseInt($(counters[0]).val());
-    var children = parseInt($(counters[1]).val());
+    var count_persons = 0,
+        count_childrens = 0,
+        count_adults = 0;
 
-    $(input).val(adults + children);
+    for(var i = 0; i < counters.length; i++){
+      var val = parseInt($(counters[i]).val());
+
+      if(val > 0){
+        $(counters[i]).parent().find(".icon-man").addClass("active");
+      }else{
+        $(counters[i]).parent().find(".icon-man").removeClass("active");
+      }
+
+      count_persons += val;
+      if(/Children/.test($(counters[i]).attr("name"))){
+        count_childrens += val;
+      }
+      else{
+        count_adults += val;
+      }
+    }
+
+    $(dsp_children).val(count_childrens);
+    $(dsp_adults).val(count_adults);
+    $(input).val(count_persons);
+
   }
 
   function passengersCounter(_type, _counter, _action){
@@ -328,26 +351,24 @@ $(function() {
 
               var res = distance > 40 ? distance * _pricePer : 50 * _fixPrice;
               console.log(distance);
-              $(_output).text(res).parent().addClass("active");
+              $(_output).text(res + " €").parent().addClass("active");
               $(_alert).fadeOut(200).empty();
 
               break;
             }
             case 'ZERO_RESULTS':{
               $(_alert).empty();
-              $(_alert).append(`<p>Вы уверенны, что указали направления правильно?
-               Не получается построить маршрут, воспользуйтесь обрытным звонком для уточнения информации:</p>
-               <a href='#popup-form' class='button small popup-form-btn'>Заказать звонок</a>`).fadeIn(200);
+              $(_alert).append("<p>Вы уверенны, что указали направления правильно? Не получается построить маршрут, воспользуйтесь обрытным звонком для уточнения информации:</p><a href='#popup-form' class='button small popup-form-btn'>Заказать звонок</a>").fadeIn(200);
               break;
             }
             case 'NOT_FOUND':{
               $(_alert).empty();
-              $(_alert).append(`<p>Вы уверены, что указали правильно направление?</p>`).fadeIn(200);
+              $(_alert).append("<p>Вы уверены, что указали правильно направление?</p>").fadeIn(200);
               break;
             }
             default: {
               $(_alert).empty();
-              $(_alert).append(`<p>Одно или несколько, указанных вами мест не существует!</p>`).fadeIn(200);
+              $(_alert).append("<p>Одно или несколько, указанных вами мест не существует!</p>").fadeIn(200);
               break;
             }
           }
