@@ -153,9 +153,9 @@ $(function() {
       var val = parseInt($(counters[i]).val());
 
       if(val > 0){
-        $(counters[i]).parent().find(".icon-man").addClass("active");
+        $(counters[i]).closest(".count-passengers").addClass("active");
       }else{
-        $(counters[i]).parent().find(".icon-man").removeClass("active");
+        $(counters[i]).closest(".count-passengers").removeClass("active");
       }
 
       count_persons += val;

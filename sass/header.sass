@@ -349,61 +349,72 @@ body
 			min-width: 0
 			padding: 10px 30px 14px 18px
 			text-align: left
-			h6
-				font-size: 15px
-				margin: 6px 0
-				&:first-of-type
-					margin-top: 0
-				span
-					color: #d8dbdb
-					font: 13px Roboto, sans-serif
-					margin-left: 5px
 			&:before
 				left: auto
 				right: 24px
-			i
-				font-size: 13px
-				position: relative!important
-				left: auto!important
-				right: auto!important
-				bottom: auto!important
-				top: auto!important
-				transition: color .5s ease
-				&.active
-					color: $light-green-lighten
-			h5
-				margin: 0
-				padding: 0
-			.counter
-				display: flex
-				align-items: center
-				input
-					width: 30px
-					height: 25px
+			.count-passengers
+				h6
+					color: #242424
+					font-size: 15px
+					margin: 6px 0
+					opacity: 0.5
+					span
+						color: #7b7b7b
+						font: 13px Roboto, sans-serif
+						margin-left: 5px
+				i
+					color: #b1e0d9
+					font-size: 13px
 					position: relative
-					text-align: center
-					display: block
-					border: none
-					background-color: transparent
-					border-radius: 0px
+					left: auto
+					right: auto
+					bottom: auto
+					top: auto
+					transition: color .5s ease
+				h5
+					margin: 0
 					padding: 0
-					margin: 0 2px
-					z-index: 0
-				.btn
-					background-color: #c0f6ea//!!! цвет без переменной
-					width: 34px
-					height: 26px
-					justify-content: center
-					align-items: center
+				.counter
 					display: flex
-					border-radius: 2px
-					cursor: pointer
-					margin-left: 5px
+					align-items: center
+					input
+						width: 30px
+						height: 25px
+						position: relative
+						text-align: center
+						display: block
+						border: none
+						background-color: transparent
+						border-radius: 0px
+						padding: 0
+						margin: 0 2px
+						opacity: 0.3
+						z-index: 0
+					.btn
+						color: darken($light-green, 5%)
+						font: 14px ClearSans, sans-serif
+						background-color: $light-green-trans
+						width: 34px
+						height: 26px
+						justify-content: center
+						align-items: center
+						display: flex
+						border-radius: 2px
+						cursor: pointer
+						margin-left: 5px
+				&.active
+					h6
+						opacity: 1
+					i
+						color: $light-green
+					.counter
+						input
+							opacity: 1
 
 .dropdown-content
 	position: absolute
 	display: none
-	top: 47px
+	top: 45px
 	min-width: 108px
 	border-radius: 5px
 	margin-bottom: 0
@@ -500,7 +511,7 @@ body
 		top: -12px
 		left: 31px
 		border: 6px solid transparent
-		border-bottom: 6px solid darken(#8e969a, 11%)
+		border-bottom: 6px solid #8e969a
 		display: block
 		width: 0
 		height: 0
