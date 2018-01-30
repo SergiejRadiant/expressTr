@@ -6,6 +6,31 @@ $(function() {
 
   $("form").submit(function(){ return false});
 
+  /*** a slider for cars ***/
+
+  function initCarsSliders(){
+    $('.slick-slider-auto').slick({
+      dots: false,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      fade: true,
+      cssEase: 'linear'
+    });
+  }
+
+  function reinitCarsSliders(){
+    $(".slick-slider-auto").slick('unslick');
+    initCarsSliders();
+  }
+
+  initCarsSliders();
+
+
+  /***  a slider for cars ***/ 
+
   /***** dropdowns ****/
 
   function findAncestor (el, cls) {
@@ -17,6 +42,7 @@ $(function() {
     this.button = _button;
     this.dropdown_container = _dropdown_container;
     this.duration = _duration;
+    
 
 
     $(button).click(function(){
@@ -72,7 +98,6 @@ $(function() {
 
 
 
-
     var current_index = $(this).index();
     var current_item;
 
@@ -81,6 +106,8 @@ $(function() {
       current_item = $(tab_items).eq(current_index - 1);
       scrollTo("#header-bottom-line");
     }else{
+
+
       
       current_item = $(tab_items).eq(0);
       scrollTo("#header");
@@ -117,12 +144,16 @@ $(function() {
 
       $(form_content).fadeIn(800);
       $("#check-auto").fadeIn(1000);
+      reinitCarsSliders();
       is_tabs_open = true;
     }else{
 
+
       $(".header-bottom-line").animate({marginTop: $(window).width() >= 993 ? marginTopHeader : '0px'}, 1000);
       $("#check-auto").fadeIn(1000);
+      reinitCarsSliders();
       is_tabs_open = false;
+
     }
   
   }).eq(0).addClass("active");
@@ -222,6 +253,7 @@ $(function() {
         if(_form_content){
           if(!is_tabs_open)
           { 
+            reinitCarsSliders();
             $(".header-bottom-line").animate({marginTop:'0px'}, 1000);
             $(_form_content).slideToggle(1000);
             $("#check-auto").fadeOut(1000);
@@ -422,20 +454,7 @@ $(function() {
   });
    /**** Pay Methods radio  ****/ 
 
-   /*** a slider for cars ***/
-
-     $('.slick-slider-auto').slick({
-      dots: false,
-      arrows: false,
-      infinite: true,
-      speed: 500,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      fade: true,
-      cssEase: 'linear'
-    });
-
-  /***  a slider for cars ***/ 
+   
 
   /*** a slider for the destination ***/
 
