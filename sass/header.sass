@@ -340,6 +340,8 @@ body
 	.mm-menu.mm-offcanvas
 		z-index: 30
 
+.mm-slideout
+	z-index: 22!important
 
 .dropdown
 	span
@@ -652,6 +654,7 @@ header
 		.header-bottom-line
 			margin-top: 135px
 
+
 	.logo
 		width: 137px
 		height: 52px
@@ -659,6 +662,8 @@ header
 	.topline
 		padding: 14px 0
 		background-color: $dark-blue-cover
+		position: relative
+		z-index: 2
 		&-wrap
 			display: flex
 			justify-content: space-between
@@ -723,12 +728,17 @@ header
 	text-align: center
 	padding-top: 30px
 	padding-bottom: 65px
+	z-index: 1
+	position: relative
+
 
 .header-bottom-line
 	color: #ffffff
 	line-height: 22px
 	text-align: center
 	padding: 12px 0 18px
+	position: relative
+	z-index: 1
 	background-color: $dark-blue-cover
 	.tabs-controls,
 	.tabs-content
