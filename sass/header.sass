@@ -643,6 +643,9 @@ body
 		font-size: 16px
 		line-height: 1em
 
+.info
+	cursor: pointer
+
 header
 	background: url(../img/header-bg.jpg) 50% -127px
 	&.main-header
@@ -752,7 +755,30 @@ header
 				background-color: rgba(255,255,255,.53)
 			&.active
 				color: $dark-blue
-				background-color: #fff				
+				background-color: #fff		
+			&.discount
+				position: relative
+				padding-right: 60px
+				span
+					display: flex
+					align-items: center
+					width: 100%
+					max-width: 50px
+					position: absolute
+					top: 0
+					bottom: 0
+					right: 0
+					margin: auto 0
+					color: $light-green-lighten
+					font: 16px RobotoMedium, sans-serif
+					border-top-right-radius: 4px
+					border-bottom-right-radius: 4px
+					padding: 0 8px 0 14px
+					background-color: rgba(255,255,255,.17)
+				&.active
+					span
+						color: #ffffff
+						background-color: $light-green
 		.review-form-tab
 			margin-left: auto
 			color: $light-green-lighten

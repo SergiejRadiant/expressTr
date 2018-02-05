@@ -36,6 +36,7 @@ gulp.task('scripts', function() {
         "./app/libs/magnific/jquery.magnific-popup.min.js",
         './app/libs/jQuery.mmenu/dist/js/jquery.mmenu.all.min.js',
         './app/libs/slick-carousel/slick.min.js',
+        './app/libs/poshytip-1.2/jquery.poshytip.min.js',
       ])
       .pipe(concat("libs.js"))
       // .pipe(uglify()) //Minify libs.js

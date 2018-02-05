@@ -423,6 +423,18 @@ $(function() {
   }
   /**** Ajax Google Maps ****/
 
+  /**** Poshy Tip ****/
+  $('.info').poshytip({
+    className: 'tip-twitter',
+    showTimeout: 1,
+    alignTo: 'target',
+    alignX: 'center',
+    offsetY: 5,
+    allowTipHover: true,
+    fade: false,
+    slide: false
+  });
+  /**** Poshy Tip ****/
 
   /**** Pay Methods radio  ****/ 
   $("input[name=pay-method]").on('change', function() {
